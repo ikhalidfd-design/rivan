@@ -170,13 +170,12 @@ export const IMAGES = {
 }
 
 /* ============================================================
-   PLACEHOLDER CONTACT — البيانات أدناه مؤقتة
-   يستبدلها المستخدم عند توفر الحسابات الرسمية:
-   - البريد الإلكتروني والحسابات الاجتماعية
-   (اضبط null لإخفاء أي قناة غير متوفرة بعد)
+   بيانات التواصل الرسمية — رُواق الإقامة
+   (اضبط null لإخفاء أي قناة غير متوفرة)
    ============================================================ */
 export const CONTACT = {
-  email: 'info@ruwaq.sa', // PLACEHOLDER — البريد الرسمي سيُحدَّد لاحقًا
-  instagram: null, // PLACEHOLDER — حساب جديد سيُضاف لاحقًا
-  tiktok: null, // PLACEHOLDER — حساب جديد سيُضاف لاحقًا
+  email: 'ruwaq.sa@gmail.com',
+  phone: '0533897745',
+  instagram: 'https://instagram.com/ruwaq.sa',
+  tiktok: 'https://tiktok.com/@ruwaq.sa',
 }

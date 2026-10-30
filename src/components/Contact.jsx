@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Mail, Instagram, Send, CheckCircle2 } from 'lucide-react'
+import { Mail, Instagram, Phone, Send, CheckCircle2 } from 'lucide-react'
 import Reveal, { SectionHeading } from './Reveal'
 import { CONTACT } from '../data/content'
 
@@ -80,6 +80,23 @@ export default function Contact() {
                 <span className="block text-xs text-muted">البريد الإلكتروني</span>
                 <span className="font-latin text-sm text-ink sm:text-base" dir="ltr">
                   {CONTACT.email}
+                </span>
+              </span>
+            </a>
+          </Reveal>
+
+          <Reveal delay={0.35}>
+            <a
+              href={`tel:+966${CONTACT.phone.slice(1)}`}
+              className="group mt-4 flex items-center gap-4 rounded-2xl border border-line bg-offwhite p-5 transition-all duration-500 hover:-translate-y-1 hover:border-gold/50 hover:shadow-[0_18px_40px_-18px_rgba(7,63,64,0.25)]"
+            >
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-teal-deep text-gold transition-colors duration-500 group-hover:bg-gold group-hover:text-teal-deep">
+                <Phone size={20} strokeWidth={1.5} />
+              </span>
+              <span>
+                <span className="block text-xs text-muted">الجوال</span>
+                <span className="font-latin text-sm text-ink sm:text-base" dir="ltr">
+                  {CONTACT.phone}
                 </span>
               </span>
             </a>
