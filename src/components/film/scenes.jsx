@@ -17,7 +17,7 @@ const ease = [0.22, 1, 0.36, 1]
 /* ——— image with graceful gradient fallback (offline / broken CDN) ——— */
 export function FilmImg({ src, alt = '', className = '', style }) {
   return (
-    <span className="absolute inset-0 block overflow-hidden bg-gradient-to-br from-ink via-[#2c2720] to-ink-soft">
+    <span className="absolute inset-0 block overflow-hidden bg-gradient-to-br from-teal-deep via-[#0b4a4b] to-forest">
       <img
         src={src}
         alt={alt}
@@ -35,7 +35,7 @@ export function FilmImg({ src, alt = '', className = '', style }) {
 
 const SceneShell = ({ children, zIndex = 0 }) => (
   <motion.div
-    className="absolute inset-0 overflow-hidden bg-ink"
+    className="absolute inset-0 overflow-hidden bg-teal-deep"
     style={{ zIndex }}
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -48,7 +48,7 @@ const SceneShell = ({ children, zIndex = 0 }) => (
 
 const SceneTitle = ({ children, delay = 0.8, className = '' }) => (
   <motion.h3
-    className={`font-display font-semibold text-ivory ${className}`}
+    className={`font-display font-semibold text-offwhite ${className}`}
     initial={{ opacity: 0, y: 26 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 1.2, delay, ease }}
@@ -76,7 +76,7 @@ export function SceneOpening() {
       >
         <FilmImg src={FILM_IMG.openingDetail} alt="تفاصيل التصميم الداخلي العصري للوحدة" className="kenburns" />
       </motion.div>
-      <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/25 to-ink/30" />
+      <div className="absolute inset-0 bg-gradient-to-t from-teal-deep/80 via-teal-deep/25 to-teal-deep/30" />
 
       <div className="absolute inset-0 flex flex-col items-center justify-center px-[6cqw] text-center">
         <motion.span
@@ -110,7 +110,7 @@ const PROBLEM_ITEMS = [
 export function SceneProblem() {
   return (
     <SceneShell>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#2b261f_0%,#211d18_65%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#0c4849_0%,#073f40_65%)]" />
       <div className="absolute inset-0 flex items-center justify-between gap-[4cqw] px-[8cqw]">
         <div className="flex-1">
           <SceneTitle className="text-[3.8cqw] leading-[1.6]" delay={0.8}>
@@ -123,13 +123,13 @@ export function SceneProblem() {
           {PROBLEM_ITEMS.map((item, i) => (
             <motion.li
               key={item.text}
-              className="flex items-center gap-[1.4cqw] rounded-[0.6cqw] border border-gold-soft/15 bg-ivory/[0.04] px-[1.8cqw] py-[1.3cqw] backdrop-blur-sm"
+              className="flex items-center gap-[1.4cqw] rounded-[0.6cqw] border border-gold-soft/15 bg-offwhite/[0.04] px-[1.8cqw] py-[1.3cqw] backdrop-blur-sm"
               initial={{ opacity: 0, x: 48 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.9 + i * 1.05, ease }}
             >
               <item.icon className="shrink-0 text-gold" size={null} style={{ width: '2cqw', height: '2cqw' }} />
-              <span className="text-[1.55cqw] font-light text-ivory/90">{item.text}</span>
+              <span className="text-[1.55cqw] font-light text-offwhite/90">{item.text}</span>
             </motion.li>
           ))}
         </ul>
@@ -161,20 +161,21 @@ export function SceneBrand() {
           transition={{ duration: 1.6, delay: 0.5, ease }}
         />
         <motion.h3
-          className="font-display mt-[2.2cqw] text-[7cqw] leading-none font-semibold text-ivory"
+          className="font-display mt-[2.2cqw] text-[6.4cqw] leading-none font-semibold text-offwhite"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.3, delay: 0.8, ease }}
         >
-          رِفان
+          رُواق الإقامة
         </motion.h3>
         <motion.span
           className="font-latin mt-[1.4cqw] text-[1.3cqw] tracking-[0.6em] text-gold uppercase"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 1.5 }}
+          dir="ltr"
         >
-          RIFAN
+          RUWAQ AL-IKAMA
         </motion.span>
         <motion.span
           className="mt-[2.6cqw] h-px w-[16cqw] bg-gold"
@@ -204,10 +205,10 @@ export function SceneBrand() {
             }}
           >
             <FilmImg src={clip.img} alt={clip.label} className="kenburns" />
-            <div className="absolute inset-0 bg-ink/45" />
+            <div className="absolute inset-0 bg-teal-deep/45" />
             <div className="absolute right-[5cqw] bottom-[10cqw] text-right">
               <motion.span
-                className="inline-block rounded-full border border-gold-soft/40 bg-ink/40 px-[2cqw] py-[0.9cqw] text-[1.5cqw] font-light text-ivory backdrop-blur-sm"
+                className="inline-block rounded-full border border-gold-soft/40 bg-teal-deep/40 px-[2cqw] py-[0.9cqw] text-[1.5cqw] font-light text-offwhite backdrop-blur-sm"
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4, ease }}
@@ -219,7 +220,7 @@ export function SceneBrand() {
         ))}
         <div className="absolute inset-x-0 bottom-[4cqw] text-center">
           <SceneTitle className="text-[3.4cqw]" delay={0.6}>
-            رِفان <span className="text-gold-soft">تتولى التفاصيل.</span>
+            رُواق <span className="text-gold-soft">تتولى التفاصيل.</span>
           </SceneTitle>
         </div>
       </motion.div>
@@ -241,19 +242,19 @@ const FILM_SERVICES = [
 export function SceneServices() {
   return (
     <SceneShell>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#2b261f_0%,#211d18_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#0c4849_0%,#073f40_70%)]" />
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-[3.4cqw] px-[7cqw]">
         <div className="grid w-full max-w-[72cqw] grid-cols-4 gap-[1.6cqw]">
           {FILM_SERVICES.map((s, i) => (
             <motion.div
               key={s.title}
-              className="flex flex-col items-center gap-[1.2cqw] rounded-[0.7cqw] border border-gold-soft/12 bg-ivory/[0.03] px-[1cqw] py-[2cqw] text-center"
+              className="flex flex-col items-center gap-[1.2cqw] rounded-[0.7cqw] border border-gold-soft/12 bg-offwhite/[0.03] px-[1cqw] py-[2cqw] text-center"
               initial={{ opacity: 0, y: 22 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.5 + i * 0.55, ease }}
             >
               <s.icon className="text-gold" size={null} style={{ width: '2.6cqw', height: '2.6cqw' }} />
-              <span className="text-[1.5cqw] font-light text-ivory/90">{s.title}</span>
+              <span className="text-[1.5cqw] font-light text-offwhite/90">{s.title}</span>
             </motion.div>
           ))}
           <motion.div
@@ -262,7 +263,7 @@ export function SceneServices() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 + 7 * 0.55, ease }}
           >
-            <span className="font-display text-[3cqw] font-semibold text-gold-soft">رِفان</span>
+            <span className="font-display text-[2.4cqw] font-semibold text-gold-soft">رُواق</span>
           </motion.div>
         </div>
       </div>
@@ -293,7 +294,7 @@ export function SceneGuest() {
           }}
         >
           <FilmImg src={clip.img} alt={`ضيف يصل إلى الوحدة — ${clip.label}`} className="kenburns" />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/15 to-ink/25" />
+          <div className="absolute inset-0 bg-gradient-to-t from-teal-deep/75 via-teal-deep/15 to-teal-deep/25" />
           <div className="absolute top-[6cqw] right-[5cqw]">
             <motion.span
               className="font-latin text-[1cqw] tracking-[0.5em] text-gold-soft/90 uppercase"
@@ -326,7 +327,7 @@ const OWNER_ROWS = [
 export function SceneOwner() {
   return (
     <SceneShell>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_left,#2b261f_0%,#211d18_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_left,#0c4849_0%,#073f40_70%)]" />
       <div className="absolute inset-0 flex items-center justify-between gap-[5cqw] px-[9cqw]">
         <SceneTitle className="flex-1 text-[3.8cqw] leading-[1.6]" delay={0.7}>
           وإدارة
@@ -335,22 +336,22 @@ export function SceneOwner() {
         </SceneTitle>
 
         <motion.div
-          className="w-[30cqw] rounded-[1cqw] border border-gold-soft/20 bg-ivory/[0.04] p-[2.2cqw] shadow-2xl backdrop-blur-sm"
+          className="w-[30cqw] rounded-[1cqw] border border-gold-soft/20 bg-offwhite/[0.04] p-[2.2cqw] shadow-2xl backdrop-blur-sm"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5, ease }}
         >
           <div className="mb-[1.6cqw] flex items-center justify-between border-b border-gold-soft/15 pb-[1.2cqw]">
-            <span className="text-[1.4cqw] font-medium text-ivory">أداء وحدتك</span>
-            <span className="font-latin text-[0.95cqw] tracking-[0.35em] text-gold uppercase">RIFAN</span>
+            <span className="text-[1.4cqw] font-medium text-offwhite">أداء وحدتك</span>
+            <span className="font-latin text-[0.95cqw] tracking-[0.35em] text-gold uppercase" dir="ltr">RUWAQ</span>
           </div>
           <ul className="flex flex-col gap-[1.5cqw]">
             {OWNER_ROWS.map((row, i) => (
               <li key={row.label}>
                 <div className="mb-[0.6cqw] flex items-center justify-between">
-                  <span className="text-[1.3cqw] font-light text-ivory/85">{row.label}</span>
+                  <span className="text-[1.3cqw] font-light text-offwhite/85">{row.label}</span>
                 </div>
-                <div className="h-[0.45cqw] overflow-hidden rounded-full bg-ivory/10">
+                <div className="h-[0.45cqw] overflow-hidden rounded-full bg-offwhite/10">
                   <motion.div
                     className="h-full rounded-full bg-gradient-to-l from-gold to-gold-soft"
                     initial={{ width: 0 }}
@@ -381,7 +382,7 @@ export function SceneFinale() {
         transition={{ duration: 13, times: [0, 0.28, 0.55, 1], ease: 'easeInOut' }}
       >
         <FilmImg src={FILM_IMG.evening} alt="الوحدة في المساء" className="kenburns" />
-        <div className="absolute inset-0 bg-ink/60" />
+        <div className="absolute inset-0 bg-teal-deep/60" />
       </motion.div>
 
       <div className="absolute inset-0 flex flex-col items-center justify-center px-[6cqw] text-center">
@@ -392,13 +393,13 @@ export function SceneFinale() {
           transition={{ duration: 13, times: [0, 0.52, 0.66], ease }}
         >
           <span className="h-px w-[12cqw] bg-gold" />
-          <h3 className="font-display mt-[1.8cqw] text-[6cqw] leading-none font-semibold text-ivory">رِفان</h3>
-          <span className="font-latin mt-[1cqw] text-[1.1cqw] tracking-[0.55em] text-gold uppercase">RIFAN</span>
-          <span className="mt-[1.2cqw] text-[1.25cqw] font-light text-ivory/70">
-            Luxury Hospitality · Professional Property Management
+          <h3 className="font-display mt-[1.8cqw] text-[5.4cqw] leading-none font-semibold text-offwhite">رُواق الإقامة</h3>
+          <span className="font-latin mt-[1cqw] text-[1.1cqw] tracking-[0.55em] text-gold uppercase" dir="ltr">RUWAQ AL-IKAMA</span>
+          <span className="mt-[1.2cqw] text-[1.25cqw] font-light text-offwhite/70" dir="ltr">
+            Residency Services, Made Simpler.
           </span>
           <span className="h-px mt-[1.8cqw] w-[12cqw] bg-gold" />
-          <p className="font-display mt-[2.4cqw] text-[2.9cqw] leading-[1.7] font-medium text-ivory">
+          <p className="font-display mt-[2.4cqw] text-[2.9cqw] leading-[1.7] font-medium text-offwhite">
             أنت تملك الوحدة…
             <br />
             <span className="text-gold-soft">ونحن نتولى تشغيلها.</span>
@@ -406,12 +407,12 @@ export function SceneFinale() {
           <motion.button
             type="button"
             onClick={goContact}
-            className="mt-[2.6cqw] rounded-full bg-gold px-[3.4cqw] py-[1.3cqw] text-[1.5cqw] font-medium text-ink transition-colors hover:bg-gold-soft"
+            className="mt-[2.6cqw] rounded-full bg-gold px-[3.4cqw] py-[1.3cqw] text-[1.5cqw] font-medium text-teal-deep transition-colors hover:bg-gold-soft"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 1.4, ease }}
           >
-            تواصل مع رِفان
+            تواصل مع رُواق
           </motion.button>
         </motion.div>
       </div>

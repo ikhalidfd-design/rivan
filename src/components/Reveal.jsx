@@ -28,7 +28,7 @@ export function SectionHeading({ label, title, light = false, center = false }) 
       <Reveal delay={0.1}>
         <h2
           className={`font-display mt-5 text-4xl leading-[1.25] font-semibold whitespace-pre-line sm:text-5xl ${
-            light ? 'text-ivory' : 'text-ink'
+            light ? 'text-offwhite' : 'text-ink'
           }`}
         >
           {title}

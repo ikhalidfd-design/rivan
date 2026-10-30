@@ -1,4 +1,5 @@
-import { NAV_LINKS } from '../data/content'
+import { NAV_LINKS, BRAND } from '../data/content'
+import Logo from './Logo'
 
 const FOOTER_LINKS = NAV_LINKS.filter((l) => l.id !== 'why')
 
@@ -9,21 +10,16 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-ink pt-20 pb-10 text-ivory">
+    <footer className="on-dark bg-teal-deep pt-20 pb-10 text-offwhite">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="flex flex-col items-center gap-10 border-b border-ivory/10 pb-14 md:flex-row md:justify-between">
+        <div className="flex flex-col items-center gap-10 border-b border-offwhite/10 pb-14 md:flex-row md:justify-between">
           {/* الشعار */}
-          <div className="flex flex-col items-center gap-4 md:items-start">
-            <img src="/logo.png" alt="شعار رِفان" className="h-16" />
-            <div className="text-center md:text-right">
-              <p className="font-display text-2xl font-semibold">رِفان</p>
-              <p className="font-latin text-xs tracking-[0.45em] text-gold">RIFAN</p>
-            </div>
-          </div>
+          <Logo onDark markClass="h-14 w-auto" textClass="text-2xl" subClass="text-[0.6rem]" />
 
-          <p className="font-latin max-w-sm text-center text-sm leading-relaxed tracking-wide text-ivory/50 md:text-left">
-            Luxury Hospitality
-            <br />+ Professional Property Management
+          <p className="font-latin max-w-sm text-center text-sm leading-relaxed tracking-wide text-offwhite/50 md:text-left" dir="ltr">
+            {BRAND.taglineEn}
+            <br />
+            Residency & Hospitality Services
           </p>
 
           {/* الروابط */}
@@ -34,7 +30,7 @@ export default function Footer() {
                   <a
                     href={`#${link.id}`}
                     onClick={go(link.id)}
-                    className="text-sm font-light text-ivory/70 transition-colors hover:text-gold-soft"
+                    className="text-sm font-light text-offwhite/70 transition-colors hover:text-gold-soft"
                   >
                     {link.label}
                   </a>
@@ -45,11 +41,11 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 flex flex-col items-center justify-between gap-4 sm:flex-row">
-          <p className="font-latin text-xs tracking-wider text-ivory/40">
-            © 2026 RIFAN. All Rights Reserved.
+          <p className="font-latin text-xs tracking-wider text-offwhite/40" dir="ltr">
+            © 2026 {BRAND.nameEn}. All Rights Reserved.
           </p>
-          <p className="text-xs font-light text-ivory/30">
-            إدارة وتشغيل احترافي للوحدات السكنية للإيجار قصير المدى
+          <p className="text-xs font-light text-offwhite/30">
+            خدمات الإقامة، بتجربة أسهل
           </p>
         </div>
       </div>

@@ -1,8 +1,8 @@
 /**
- * RIFAN film — scene timeline & copy.
+ * RUWAQ film — scene timeline & copy.
  *
  * FILM_SRC: when a real produced MP4 is ready, drop the file at
- * public/video/rifan.mp4 and set FILM_SRC = '/video/rifan.mp4'.
+ * public/video/ruwaq.mp4 and set FILM_SRC = '/video/ruwaq.mp4'.
  * The player switches automatically to the real video with the same
  * controls. Until then the film is rendered programmatically below.
  */
@@ -61,7 +61,7 @@ export const CAPTIONS = [
   { from: 46.0, to: 51.0, text: 'تجربة أفضل للضيف.' },
   { from: 58.0, to: 63.0, text: 'وإدارة أوضح للمالك.' },
   { from: 68.0, to: 76.0, text: 'أنت تملك الوحدة… ونحن نتولى تشغيلها.' },
-  { from: 76.5, to: 81.0, text: 'رِفان.' },
+  { from: 76.5, to: 81.0, text: 'رُواق الإقامة.' },
 ]
 
 export function captionAt(t) {

@@ -36,7 +36,7 @@ export default function HowItWorks() {
                     whileInView={{ scale: 1, opacity: 1 }}
                     viewport={{ once: true, margin: '-60px' }}
                     transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                    className="absolute right-0 z-10 flex h-14 w-14 items-center justify-center rounded-full border border-gold/50 bg-ivory text-gold shadow-[0_0_0_8px_var(--color-ivory)] sm:right-1/2 sm:translate-x-1/2"
+                    className="absolute right-0 z-10 flex h-14 w-14 items-center justify-center rounded-full border border-gold/50 bg-offwhite text-gold-deep shadow-[0_0_0_8px_var(--color-offwhite)] sm:right-1/2 sm:translate-x-1/2"
                   >
                     <Icon size={20} strokeWidth={1.5} />
                   </motion.div>
@@ -49,7 +49,7 @@ export default function HowItWorks() {
                     }`}
                   >
                     <div
-                      className={`group rounded-2xl border border-line bg-white/60 p-6 transition-all duration-500 hover:-translate-y-1 hover:border-gold/50 hover:shadow-[0_20px_40px_-18px_rgba(150,118,58,0.25)] ${
+                      className={`group rounded-2xl border border-line bg-white/60 p-6 transition-all duration-500 hover:-translate-y-1 hover:border-gold/50 hover:shadow-[0_20px_40px_-18px_rgba(7,63,64,0.22)] ${
                         isStart ? 'sm:ml-auto' : ''
                       } max-w-md`}
                     >

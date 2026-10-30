@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import Reveal, { SectionHeading } from './Reveal'
-import RifanFilm from './film/RifanFilm'
+import RuwaqFilm from './film/RuwaqFilm'
 
 /** يحمّل مشغّل الفيديو فقط عند اقترابه من الشاشة (Lazy Loading) */
 function LazyFilm() {
@@ -38,7 +38,7 @@ function LazyFilm() {
         }`}
       />
       <div className={show ? '' : 'invisible'}>
-        {show && <RifanFilm />}
+        {show && <RuwaqFilm />}
       </div>
     </div>
   )
@@ -51,16 +51,16 @@ export default function VideoShowcase() {
   }
 
   return (
-    <section id="film" className="relative overflow-hidden bg-ivory-deep py-28 lg:py-36">
+    <section id="film" className="relative overflow-hidden bg-mist py-28 lg:py-36">
       <div className="mx-auto max-w-6xl px-6 lg:px-10">
         <SectionHeading
           center
-          label="The RIFAN Film"
+          label="The RUWAQ Film"
           title={'التفاصيل التي لا تراها…\nنحن نديرها.'}
         />
         <Reveal delay={0.2}>
           <p className="mx-auto mt-8 max-w-2xl text-center text-lg leading-relaxed font-light text-ink-soft">
-            من التشغيل اليومي إلى تجربة الضيف، تتولى رِفان التفاصيل التي تصنع الفرق.
+            من التشغيل اليومي إلى تجربة الضيف، تتولى رُواق التفاصيل التي تصنع الفرق.
           </p>
         </Reveal>
 
@@ -77,10 +77,10 @@ export default function VideoShowcase() {
             <a
               href="#services"
               onClick={go('services')}
-              className="group relative inline-block overflow-hidden rounded-full bg-ink px-9 py-4 text-sm font-medium text-ivory transition-transform duration-300 hover:-translate-y-0.5"
+              className="group relative inline-block overflow-hidden rounded-full bg-teal-deep px-9 py-4 text-sm font-medium text-offwhite transition-transform duration-300 hover:-translate-y-0.5"
             >
               <span className="absolute inset-0 -translate-x-full bg-gold transition-transform duration-500 ease-out group-hover:translate-x-0" />
-              <span className="relative">تعرّف على خدماتنا</span>
+              <span className="relative transition-colors duration-500 group-hover:text-teal-deep">تعرّف على خدماتنا</span>
             </a>
           </div>
         </Reveal>

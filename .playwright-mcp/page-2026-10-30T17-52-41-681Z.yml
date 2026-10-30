@@ -1,0 +1,209 @@
+- generic [ref=f60e1]:
+  - generic:
+    - generic:
+      - generic:
+        - generic [ref=f60e6]:
+          - generic [ref=f60e9]:
+            - link [ref=f60e14] [cursor=pointer]:
+              - /url: /
+            - generic [ref=f60e22]:
+              - link [ref=f60e27] [cursor=pointer]:
+                - /url: /
+              - link [ref=f60e37] [cursor=pointer]:
+                - /url: /reels/
+              - link [ref=f60e49] [cursor=pointer]:
+                - /url: /direct/inbox/
+              - link [ref=f60e60] [cursor=pointer]:
+                - /url: /explore/
+              - link [ref=f60e72] [cursor=pointer]:
+                - /url: "#"
+              - link [ref=f60e83] [cursor=pointer]:
+                - /url: "#"
+              - link [ref=f60e94] [cursor=pointer]:
+                - /url: /ruwaq.sa/
+                - link [ref=f60e100]
+            - generic [ref=f60e102]:
+              - link [ref=f60e105] [cursor=pointer]:
+                - /url: "#"
+              - link [ref=f60e113] [cursor=pointer]:
+                - /url: "#"
+          - generic [ref=f60e121]:
+            - main [ref=f60e122]:
+              - generic [ref=f60e124]:
+                - generic [ref=f60e125]:
+                  - generic [ref=f60e126]:
+                    - generic [ref=f60e130]:
+                      - button [ref=f60e131] [cursor=pointer]:
+                        - generic [ref=f60e132]: Note...
+                      - button [ref=f60e143] [cursor=pointer]
+                    - generic [ref=f60e146]:
+                      - generic [ref=f60e147]:
+                        - link [ref=f60e149] [cursor=pointer]:
+                          - /url: "#"
+                          - heading [level=2] [ref=f60e150]:
+                            - generic [ref=f60e151]: ruwaq.sa
+                        - button [ref=f60e152] [cursor=pointer]
+                      - generic [ref=f60e157]:
+                        - generic [ref=f60e159]:
+                          - generic [ref=f60e160]: "4"
+                          - text: posts
+                        - link [ref=f60e162] [cursor=pointer]:
+                          - /url: "#"
+                          - generic [ref=f60e163]:
+                            - generic [ref=f60e164]: "0"
+                            - text: followers
+                        - link [ref=f60e166] [cursor=pointer]:
+                          - /url: "#"
+                          - generic [ref=f60e167]:
+                            - generic [ref=f60e168]: "0"
+                            - text: following
+                  - generic [ref=f60e172]:
+                    - button [ref=f60e173] [cursor=pointer]:
+                      - generic [ref=f60e174]: إدارة وتشغيل الوحدات السكنية للإيجار اليومي 🏠 الحجوزات · الضيوف · التنظيف · الصيانة وحدتك باسمك ونحن نديرها باحتراف
+                    - generic [ref=f60e175]:
+                      - text: ...
+                      - button [ref=f60e176] [cursor=pointer]:
+                        - generic [ref=f60e177]: more
+                  - generic [ref=f60e182]:
+                    - link [ref=f60e184] [cursor=pointer]:
+                      - /url: /accounts/edit/
+                      - text: Edit Profile
+                    - link [ref=f60e186] [cursor=pointer]:
+                      - /url: /archive/stories/
+                      - text: View archive
+                  - menu [ref=f60e188]:
+                    - list [ref=f60e192]:
+                      - listitem [ref=f60e193]
+                      - listitem [ref=f60e194]
+                      - listitem [ref=f60e195]:
+                        - button [ref=f60e198] [cursor=pointer]:
+                          - generic [ref=f60e204]: New
+                - tablist [ref=f60e208]:
+                  - link [ref=f60e210] [cursor=pointer]:
+                    - /url: /ruwaq.sa/
+                  - link [ref=f60e223] [cursor=pointer]:
+                    - /url: /ruwaq.sa/saved/
+                  - link [ref=f60e228] [cursor=pointer]:
+                    - /url: /ruwaq.sa/tagged/
+                - generic [ref=f60e237]:
+                  - generic [ref=f60e238]:
+                    - link [ref=f60e240] [cursor=pointer]:
+                      - /url: /ruwaq.sa/p/DfIKWK4EaCq/
+                    - link [ref=f60e246] [cursor=pointer]:
+                      - /url: /ruwaq.sa/p/DfIKNlQkR8W/
+                    - link [ref=f60e252] [cursor=pointer]:
+                      - /url: /ruwaq.sa/p/DfIKG44EWJ1/
+                  - link [ref=f60e259] [cursor=pointer]:
+                    - /url: /ruwaq.sa/p/DfIJ111kZeL/
+            - contentinfo [ref=f60e266]:
+              - generic [ref=f60e267]:
+                - generic [ref=f60e269]:
+                  - link [ref=f60e271] [cursor=pointer]:
+                    - /url: https://about.meta.com/
+                    - generic [ref=f60e272]: Meta
+                  - link [ref=f60e274] [cursor=pointer]:
+                    - /url: https://about.instagram.com/
+                    - generic [ref=f60e275]: About
+                  - link [ref=f60e277] [cursor=pointer]:
+                    - /url: https://about.instagram.com/blog/
+                    - generic [ref=f60e278]: Blog
+                  - link [ref=f60e280] [cursor=pointer]:
+                    - /url: https://about.instagram.com/about-us/careers
+                    - generic [ref=f60e281]: Jobs
+                  - link [ref=f60e283] [cursor=pointer]:
+                    - /url: https://help.instagram.com/
+                    - generic [ref=f60e284]: Help
+                  - link [ref=f60e286] [cursor=pointer]:
+                    - /url: https://developers.facebook.com/docs/instagram
+                    - generic [ref=f60e287]: API
+                  - link [ref=f60e289] [cursor=pointer]:
+                    - /url: /legal/privacy/
+                    - generic [ref=f60e290]: Privacy
+                  - link [ref=f60e292] [cursor=pointer]:
+                    - /url: /legal/terms/
+                    - generic [ref=f60e293]: Terms
+                  - link [ref=f60e295] [cursor=pointer]:
+                    - /url: /explore/locations/
+                    - generic [ref=f60e296]: Locations
+                  - link [ref=f60e298] [cursor=pointer]:
+                    - /url: /popular/
+                    - generic [ref=f60e299]: Popular
+                  - link [ref=f60e301] [cursor=pointer]:
+                    - /url: /web/lite/
+                    - generic [ref=f60e302]: Instagram Lite
+                  - link [ref=f60e304] [cursor=pointer]:
+                    - /url: https://www.meta.ai/?utm_source=foa_web_footer
+                    - generic [ref=f60e305]: Meta AI
+                  - link [ref=f60e307] [cursor=pointer]:
+                    - /url: https://muse.ai/
+                    - generic [ref=f60e308]: Muse
+                  - link [ref=f60e310] [cursor=pointer]:
+                    - /url: https://www.threads.com/
+                    - generic [ref=f60e311]: Threads
+                  - link [ref=f60e313] [cursor=pointer]:
+                    - /url: https://www.facebook.com/help/instagram/261704639352628
+                    - generic [ref=f60e314]: Contact uploading and non-users
+                - generic [ref=f60e315]:
+                  - generic [ref=f60e316] [cursor=pointer]:
+                    - generic [ref=f60e317]: English (UK)
+                    - combobox [ref=f60e323]
+                  - generic [ref=f60e324]: © 2026 Instagram from Meta
+        - button [ref=f60e327] [cursor=pointer]:
+          - generic "Messages" [ref=f60e328]:
+            - generic [ref=f60e329]:
+              - img "Messages" [ref=f60e332]
+              - generic [ref=f60e335]: Messages
+  - generic [ref=f60e338]:
+    - button [ref=f60e341] [cursor=pointer]:
+      - img "Close" [ref=f60e343]
+    - dialog "Create new post" [ref=f60e348]:
+      - generic [ref=f60e352]:
+        - generic [ref=f60e356]:
+          - heading "Create new post" [active] [level=1] [ref=f60e359]
+          - button [ref=f60e362] [cursor=pointer]:
+            - img "Back" [ref=f60e365]
+          - button "Share" [ref=f60e369] [cursor=pointer]
+        - generic [ref=f60e370]:
+          - generic [ref=f60e375]:
+            - img "Photo for tag placement" [ref=f60e376]
+            - button "Tag People" [ref=f60e377]
+          - generic [ref=f60e382]:
+            - generic [ref=f60e388]:
+              - link [ref=f60e391]:
+                - img "ruwaq.sa's profile picture" [ref=f60e392]
+              - generic [ref=f60e393]: ruwaq.sa
+            - generic [ref=f60e399]:
+              - generic [ref=f60e400]:
+                - textbox "Add a caption..." [ref=f60e401]:
+                  - paragraph [ref=f60e402]
+                - generic: Add a caption...
+              - generic [ref=f60e403]:
+                - button [ref=f60e405] [cursor=pointer]:
+                  - img "Emoji" [ref=f60e407]
+                - button "0/2,200" [ref=f60e411] [cursor=pointer]
+            - separator [ref=f60e413]
+            - generic [ref=f60e416]:
+              - textbox "Add Location" [ref=f60e417]
+              - img "Add Location" [ref=f60e419]
+            - generic [ref=f60e423]:
+              - textbox "Add collaborators" [ref=f60e424]
+              - img "Add collaborators" [ref=f60e426]
+            - generic [ref=f60e431]:
+              - generic [ref=f60e432]:
+                - generic [ref=f60e433]: Add AI label
+                - switch [ref=f60e437] [cursor=pointer]
+              - generic [ref=f60e439]:
+                - text: This label is required for realistic photos and videos made with AI. People will see it on your content.
+                - link "Learn more" [ref=f60e440] [cursor=pointer]:
+                  - /url: https://help.instagram.com/761121959519495
+            - separator [ref=f60e441]
+            - button "Accessibility Down Chevron Icon" [ref=f60e443] [cursor=pointer]:
+              - generic [ref=f60e444]: Accessibility
+              - img "Down Chevron Icon" [ref=f60e446]
+            - separator [ref=f60e448]
+            - button "Advanced Settings Down Chevron Icon" [ref=f60e450] [cursor=pointer]:
+              - generic [ref=f60e451]: Advanced Settings
+              - img "Down Chevron Icon" [ref=f60e453]
+            - separator [ref=f60e455]
+    - button [ref=f60e457] [cursor=pointer]:
+      - tooltip "Click photo to tag people" [ref=f60e459]

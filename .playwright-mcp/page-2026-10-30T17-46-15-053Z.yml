@@ -1,0 +1,202 @@
+- generic [ref=f42e4]:
+  - generic [ref=f42e9]:
+    - generic [ref=f42e12]:
+      - link [ref=f42e17] [cursor=pointer]:
+        - /url: /
+        - img "Instagram" [ref=f42e22]
+      - generic [ref=f42e25]:
+        - link [ref=f42e30] [cursor=pointer]:
+          - /url: /
+          - img "Home" [ref=f42e35]
+        - link [ref=f42e40] [cursor=pointer]:
+          - /url: /reels/
+          - img "Reels" [ref=f42e45]
+        - link [ref=f42e52] [cursor=pointer]:
+          - /url: /direct/inbox/
+          - img "Messages" [ref=f42e57]
+        - link [ref=f42e63] [cursor=pointer]:
+          - /url: /explore/
+          - img "Search" [ref=f42e68]
+        - link [ref=f42e75] [cursor=pointer]:
+          - /url: "#"
+          - img "Notifications" [ref=f42e80]
+        - link [ref=f42e86] [cursor=pointer]:
+          - /url: "#"
+          - img "New post" [ref=f42e91]
+        - link [ref=f42e97] [cursor=pointer]:
+          - /url: /ruwaq.sa/
+          - link [ref=f42e102]:
+            - img "ruwaq.sa's profile picture" [ref=f42e103]
+      - generic [ref=f42e104]:
+        - link [ref=f42e107] [cursor=pointer]:
+          - /url: "#"
+          - img "Settings" [ref=f42e112]
+        - link [ref=f42e115] [cursor=pointer]:
+          - /url: "#"
+          - img "Also from Meta" [ref=f42e120]
+    - generic [ref=f42e123]:
+      - main [ref=f42e124]:
+        - generic [ref=f42e129]:
+          - generic [ref=f42e131]:
+            - generic [ref=f42e133]:
+              - generic [ref=f42e135]:
+                - status "Loading..." [ref=f42e136]
+                - generic [ref=f42e137]:
+                  - status "Loading..." [ref=f42e138]
+                  - status "Loading..." [ref=f42e139]
+              - status "Loading..." [ref=f42e140]
+            - article [ref=f42e141]:
+              - generic [ref=f42e142]:
+                - generic [ref=f42e144]:
+                  - generic [ref=f42e148]:
+                    - button [disabled] [ref=f42e153]:
+                      - link [disabled] [ref=f42e155] [cursor=pointer]:
+                        - img "asian.workers's profile picture" [ref=f42e156]
+                    - generic [ref=f42e159]:
+                      - generic [ref=f42e160]:
+                        - generic [ref=f42e161]:
+                          - link "asian.workers" [ref=f42e169] [cursor=pointer]:
+                            - /url: /asian.workers/
+                          - generic [ref=f42e173]:
+                            - generic [ref=f42e174]: •
+                            - link [ref=f42e177] [cursor=pointer]:
+                              - /url: /p/Ddx_w5iIhzL/
+                              - time [ref=f42e179]: 4 w
+                        - link "Original audio" [ref=f42e183] [cursor=pointer]:
+                          - /url: /reels/audio/29550583387876561/
+                      - button "Follow" [ref=f42e188] [cursor=pointer]
+                    - button [ref=f42e191] [cursor=pointer]:
+                      - img "More Options" [ref=f42e194]
+                  - link [ref=f42e198] [cursor=pointer]:
+                    - /url: /reels/Ddx_w5iIhzL/
+                    - group "Video player" [ref=f42e215]:
+                      - generic:
+                        - generic "Play"
+                      - slider "Adjust volume" [ref=f42e218]:
+                        - button [ref=f42e220]:
+                          - img "Audio is muted" [ref=f42e221]
+                - generic [ref=f42e225]:
+                  - generic [ref=f42e226]:
+                    - generic [ref=f42e227]:
+                      - button [ref=f42e230] [cursor=pointer]:
+                        - img "Like" [ref=f42e233]
+                      - button "301.8K" [ref=f42e235] [cursor=pointer]
+                      - button [ref=f42e237] [cursor=pointer]:
+                        - img "Comment" [ref=f42e239]
+                      - button "3.1K" [ref=f42e241] [cursor=pointer]
+                      - button [ref=f42e242] [cursor=pointer]:
+                        - img "Repost" [ref=f42e243]
+                      - button "10.1K" [ref=f42e245] [cursor=pointer]
+                      - button [ref=f42e246] [cursor=pointer]:
+                        - img "Share" [ref=f42e247]
+                    - button [ref=f42e252] [cursor=pointer]:
+                      - button [ref=f42e253]:
+                        - img "Save" [ref=f42e255]
+                  - generic [ref=f42e257]:
+                    - link "asian.workers" [ref=f42e262] [cursor=pointer]:
+                      - /url: /asian.workers/
+                    - generic [ref=f42e266]:
+                      - generic [ref=f42e267]: 100% Handmade — No Machine Used | Biggest Aluminum Vessel Ever Made
+                      - generic [ref=f42e268]:
+                        - text: ...
+                        - button "more" [ref=f42e269] [cursor=pointer]
+          - progressbar [ref=f42e272]:
+            - img "Loading..." [ref=f42e273]
+      - contentinfo [ref=f42e286]:
+        - generic [ref=f42e287]:
+          - generic [ref=f42e289]:
+            - link "Meta" [ref=f42e291] [cursor=pointer]:
+              - /url: https://about.meta.com/
+            - link "About" [ref=f42e294] [cursor=pointer]:
+              - /url: https://about.instagram.com/
+            - link "Blog" [ref=f42e297] [cursor=pointer]:
+              - /url: https://about.instagram.com/blog/
+            - link "Jobs" [ref=f42e300] [cursor=pointer]:
+              - /url: https://about.instagram.com/about-us/careers
+            - link "Help" [ref=f42e303] [cursor=pointer]:
+              - /url: https://help.instagram.com/
+            - link "API" [ref=f42e306] [cursor=pointer]:
+              - /url: https://developers.facebook.com/docs/instagram
+            - link "Privacy" [ref=f42e309] [cursor=pointer]:
+              - /url: /legal/privacy/
+            - link "Terms" [ref=f42e312] [cursor=pointer]:
+              - /url: /legal/terms/
+            - link "Locations" [ref=f42e315] [cursor=pointer]:
+              - /url: /explore/locations/
+            - link "Popular" [ref=f42e318] [cursor=pointer]:
+              - /url: /popular/
+            - link "Instagram Lite" [ref=f42e321] [cursor=pointer]:
+              - /url: /web/lite/
+            - link "Meta AI" [ref=f42e324] [cursor=pointer]:
+              - /url: https://www.meta.ai/?utm_source=foa_web_footer
+            - link "Muse" [ref=f42e327] [cursor=pointer]:
+              - /url: https://muse.ai/
+            - link "Threads" [ref=f42e330] [cursor=pointer]:
+              - /url: https://www.threads.com/
+            - link "Contact uploading and non-users" [ref=f42e333] [cursor=pointer]:
+              - /url: https://www.facebook.com/help/instagram/261704639352628
+          - generic [ref=f42e335]:
+            - generic [ref=f42e336] [cursor=pointer]:
+              - generic [ref=f42e337]:
+                - generic [ref=f42e338]: English (UK)
+                - img "Down Chevron Icon" [ref=f42e341]
+              - combobox "Switch display language" [ref=f42e343]:
+                - option "Afrikaans"
+                - option "العربية"
+                - option "Čeština"
+                - option "Dansk"
+                - option "Deutsch"
+                - option "Ελληνικά"
+                - option "English"
+                - option "English (UK)" [selected]
+                - option "Español (España)"
+                - option "Español"
+                - option "فارسی"
+                - option "Suomi"
+                - option "Français"
+                - option "עברית"
+                - option "Bahasa Indonesia"
+                - option "Italiano"
+                - option "日本語"
+                - option "한국어"
+                - option "Bahasa Melayu"
+                - option "Norsk"
+                - option "Nederlands"
+                - option "Polski"
+                - option "Português (Brasil)"
+                - option "Português (Portugal)"
+                - option "Русский"
+                - option "Svenska"
+                - option "ภาษาไทย"
+                - option "Filipino"
+                - option "Türkçe"
+                - option "中文(简体)"
+                - option "中文(台灣)"
+                - option "বাংলা"
+                - option "ગુજરાતી"
+                - option "हिन्दी"
+                - option "Hrvatski"
+                - option "Magyar"
+                - option "ಕನ್ನಡ"
+                - option "മലയാളം"
+                - option "मराठी"
+                - option "नेपाली"
+                - option "ਪੰਜਾਬੀ"
+                - option "සිංහල"
+                - option "Slovenčina"
+                - option "தமிழ்"
+                - option "తెలుగు"
+                - option "اردو"
+                - option "Tiếng Việt"
+                - option "中文(香港)"
+                - option "Български"
+                - option "Français (Canada)"
+                - option "Română"
+                - option "Српски"
+                - option "Українська"
+            - generic [ref=f42e344]: © 2026 Instagram from Meta
+  - button [ref=f42e347] [cursor=pointer]:
+    - generic "Messages" [ref=f42e348]:
+      - generic [ref=f42e349]:
+        - img "Messages" [ref=f42e352]
+        - generic [ref=f42e355]: Messages

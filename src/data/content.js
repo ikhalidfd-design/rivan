@@ -21,12 +21,21 @@ import {
   Award,
 } from 'lucide-react'
 
+/* ——— هوية رُواق الإقامة — مرجع واحد لكل نصوص العلامة ——— */
+export const BRAND = {
+  nameAr: 'رُواق الإقامة',
+  nameShort: 'رُواق',
+  nameEn: 'RUWAQ AL-IKAMA',
+  taglineAr: 'خدمات الإقامة، بتجربة أسهل.',
+  taglineEn: 'Residency Services, Made Simpler.',
+}
+
 export const NAV_LINKS = [
   { id: 'home', label: 'الرئيسية' },
   { id: 'about', label: 'من نحن' },
   { id: 'services', label: 'خدماتنا' },
   { id: 'how', label: 'آلية العمل' },
-  { id: 'why', label: 'لماذا رِفان' },
+  { id: 'why', label: 'لماذا رُواق' },
   { id: 'contact', label: 'تواصل معنا' },
 ]
 
@@ -117,18 +126,18 @@ export const WHY_POINTS = [
 
 export const OWNER_JOURNEY = [
   { actor: 'أنت', text: 'تملك الوحدة', you: true },
-  { actor: 'رِفان', text: 'تتولى الإدارة والتشغيل', you: false },
+  { actor: 'رُواق', text: 'تتولى الإدارة والتشغيل', you: false },
   { actor: 'الضيف', text: 'يحصل على تجربة متكاملة', you: false },
   { actor: 'أنت', text: 'تتابع أداء وحدتك بوضوح', you: true },
 ]
 
 export const FAQ_ITEMS = [
   {
-    q: 'كيف تبدأ رِفان بإدارة وحدتي؟',
+    q: 'كيف تبدأ رُواق الإقامة بخدمة وحدتي؟',
     a: 'نبدأ بزيارة الوحدة وتقييمها، ثم نجهّز خطة التشغيل المناسبة لها — من التجهيز والتصوير إلى الإطلاق على منصات الحجز — ونبدأ الإدارة والتشغيل الفعلي.',
   },
   {
-    q: 'ما المدن التي تعمل بها رِفان حاليًا؟',
+    q: 'ما المدن التي تعمل بها رُواق الإقامة حاليًا؟',
     a: 'نعمل حاليًا في الرياض والمنطقة الشرقية، مع خطط للتوسع في مناطق أخرى قريبًا.',
   },
   {
@@ -160,8 +169,14 @@ export const IMAGES = {
   living: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1200&auto=format&fit=crop',
 }
 
+/* ============================================================
+   PLACEHOLDER CONTACT — البيانات أدناه مؤقتة
+   يستبدلها المستخدم عند توفر الحسابات الرسمية:
+   - البريد الإلكتروني والحسابات الاجتماعية
+   (اضبط null لإخفاء أي قناة غير متوفرة بعد)
+   ============================================================ */
 export const CONTACT = {
-  email: 'b.rifan.mk@gmail.com',
-  instagram: 'https://instagram.com/I0.rifan',
-  tiktok: 'https://tiktok.com/@I0.rifan',
+  email: 'info@ruwaq.sa', // PLACEHOLDER — البريد الرسمي سيُحدَّد لاحقًا
+  instagram: null, // PLACEHOLDER — حساب جديد سيُضاف لاحقًا
+  tiktok: null, // PLACEHOLDER — حساب جديد سيُضاف لاحقًا
 }

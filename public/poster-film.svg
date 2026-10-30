@@ -1,37 +1,45 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
   <defs>
     <radialGradient id="bg" cx="50%" cy="42%" r="75%">
-      <stop offset="0%" stop-color="#35301f"/>
-      <stop offset="55%" stop-color="#211d18"/>
-      <stop offset="100%" stop-color="#17140f"/>
+      <stop offset="0%" stop-color="#0b4a4b"/>
+      <stop offset="55%" stop-color="#073f40"/>
+      <stop offset="100%" stop-color="#052e2f"/>
     </radialGradient>
     <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#96763a"/>
-      <stop offset="50%" stop-color="#d9c9a8"/>
-      <stop offset="100%" stop-color="#96763a"/>
+      <stop offset="0%" stop-color="#a9855a"/>
+      <stop offset="50%" stop-color="#d8be95"/>
+      <stop offset="100%" stop-color="#a9855a"/>
     </linearGradient>
   </defs>
 
   <rect width="1920" height="1080" fill="url(#bg)"/>
 
+  <!-- arch motif from the mark -->
+  <g opacity="0.06" fill="#F8F7F3">
+    <path transform="translate(120,140) scale(9)" d="M 51.0,0.2 A 64.1 64.1 0 0 1 107.6,101.4 L 77.6,82.6 A 32.5 32.5 0 0 0 50.8,29.6 Z"/>
+  </g>
+  <g opacity="0.05" fill="#F8F7F3">
+    <path transform="translate(1520,620) scale(7)" d="M 51.0,0.2 A 64.1 64.1 0 0 1 107.6,101.4 L 77.6,82.6 A 32.5 32.5 0 0 0 50.8,29.6 Z"/>
+  </g>
+
   <!-- hairline frame -->
-  <rect x="90" y="70" width="1740" height="940" fill="none" stroke="#b08d4f" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="90" y="70" width="1740" height="940" fill="none" stroke="#C5A477" stroke-opacity="0.35" stroke-width="2"/>
 
   <!-- corner accents -->
-  <path d="M90 130 V70 h60" fill="none" stroke="#d9c9a8" stroke-width="4"/>
-  <path d="M1830 130 V70 h-60" fill="none" stroke="#d9c9a8" stroke-width="4"/>
-  <path d="M90 950 v60 h60" fill="none" stroke="#d9c9a8" stroke-width="4"/>
-  <path d="M1830 950 v60 h-60" fill="none" stroke="#d9c9a8" stroke-width="4"/>
+  <path d="M90 130 V70 h60" fill="none" stroke="#D8BE95" stroke-width="4"/>
+  <path d="M1830 130 V70 h-60" fill="none" stroke="#D8BE95" stroke-width="4"/>
+  <path d="M90 950 v60 h60" fill="none" stroke="#D8BE95" stroke-width="4"/>
+  <path d="M1830 950 v60 h-60" fill="none" stroke="#D8BE95" stroke-width="4"/>
 
   <!-- wordmark -->
-  <rect x="760" y="368" width="400" height="2" fill="url(#gold)"/>
-  <text x="960" y="540" text-anchor="middle" fill="#fbf9f6" font-family="'El Messiri','Tajawal',serif" font-size="150" font-weight="600">رِفان</text>
-  <text x="960" y="625" text-anchor="middle" fill="#b08d4f" font-family="'Marcellus',serif" font-size="42" letter-spacing="22">RIFAN</text>
-  <rect x="760" y="668" width="400" height="2" fill="url(#gold)"/>
+  <rect x="700" y="358" width="520" height="2" fill="url(#gold)"/>
+  <text x="960" y="530" text-anchor="middle" fill="#F8F7F3" font-family="'Alexandria','IBM Plex Sans Arabic',sans-serif" font-size="120" font-weight="600">رُواق الإقامة</text>
+  <text x="960" y="618" text-anchor="middle" fill="#C5A477" font-family="'IBM Plex Sans','IBM Plex Sans Arabic',sans-serif" font-size="38" letter-spacing="20">RUWAQ AL-IKAMA</text>
+  <rect x="700" y="662" width="520" height="2" fill="url(#gold)"/>
 
-  <text x="960" y="740" text-anchor="middle" fill="#d9c9a8" fill-opacity="0.85" font-family="'Tajawal',sans-serif" font-size="30" font-weight="300">Luxury Hospitality · Professional Property Management</text>
+  <text x="960" y="736" text-anchor="middle" fill="#D8BE95" fill-opacity="0.85" font-family="'IBM Plex Sans Arabic',sans-serif" font-size="30" font-weight="300">خدمات الإقامة، بتجربة أسهل.</text>
 
   <!-- play affordance -->
-  <circle cx="960" cy="880" r="46" fill="none" stroke="#d9c9a8" stroke-opacity="0.6" stroke-width="2.5"/>
-  <path d="M948 856 L948 904 L990 880 Z" fill="#d9c9a8" fill-opacity="0.9"/>
+  <circle cx="960" cy="880" r="46" fill="none" stroke="#D8BE95" stroke-opacity="0.6" stroke-width="2.5"/>
+  <path d="M948 856 L948 904 L990 880 Z" fill="#D8BE95" fill-opacity="0.9"/>
 </svg>

@@ -17,17 +17,18 @@ export default function OwnerExperience() {
                 <div
                   className={`relative mx-auto flex max-w-xl items-center justify-between gap-6 rounded-2xl border p-6 transition-all duration-500 hover:-translate-y-1 ${
                     item.you
-                      ? 'border-line bg-ivory hover:border-gold/50 hover:shadow-[0_18px_40px_-18px_rgba(150,118,58,0.3)]'
-                      : 'border-transparent bg-ink text-ivory hover:shadow-[0_18px_40px_-14px_rgba(33,29,24,0.5)]'
+                      ? 'border-line bg-offwhite hover:border-gold/50 hover:shadow-[0_18px_40px_-18px_rgba(7,63,64,0.25)]'
+                      : 'on-dark border-transparent bg-teal-deep text-offwhite hover:shadow-[0_18px_40px_-14px_rgba(4,35,36,0.5)]'
                   }`}
                 >
                   <div className="text-right">
                     <span
                       className={`font-latin text-[0.6rem] tracking-[0.35em] uppercase ${
-                        item.you ? 'text-gold' : 'text-gold-soft'
+                        item.you ? 'text-gold-deep' : 'text-gold-soft'
                       }`}
+                      dir="ltr"
                     >
-                      {item.you ? 'YOU' : i === 1 ? 'RIFAN' : 'GUEST'}
+                      {item.you ? 'YOU' : i === 1 ? 'RUWAQ' : 'GUEST'}
                     </span>
                     <h3 className={`font-display mt-1.5 text-2xl font-semibold ${item.you ? 'text-ink' : ''}`}>
                       {item.text}
@@ -35,7 +36,7 @@ export default function OwnerExperience() {
                   </div>
                   <span
                     className={`font-display shrink-0 rounded-full px-5 py-2.5 text-lg font-semibold ${
-                      item.you ? 'bg-sand text-ink-soft' : 'bg-gold text-white'
+                      item.you ? 'bg-mist text-ink-soft' : 'bg-gold text-teal-deep'
                     }`}
                   >
                     {item.actor}

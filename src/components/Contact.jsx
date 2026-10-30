@@ -11,10 +11,11 @@ const TikTokIcon = ({ size = 20 }) => (
   </svg>
 )
 
+/* تُبنى القنوات المتاحة فقط — القنوات غير المحددة بعد (null) تُخفى تلقائيًا */
 const SOCIALS = [
-  { label: 'Instagram', handle: 'I0.rifan', href: CONTACT.instagram, Icon: Instagram },
-  { label: 'TikTok', handle: 'I0.rifan', href: CONTACT.tiktok, Icon: TikTokIcon },
-]
+  CONTACT.instagram && { label: 'Instagram', href: CONTACT.instagram, Icon: Instagram },
+  CONTACT.tiktok && { label: 'TikTok', href: CONTACT.tiktok, Icon: TikTokIcon },
+].filter(Boolean)
 
 const INITIAL = { name: '', phone: '', email: '', city: '', units: '', message: '' }
 
@@ -35,7 +36,7 @@ export default function Contact() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          _subject: 'طلب جديد من موقع رِفان',
+          _subject: 'طلب جديد من موقع رُواق الإقامة',
           _template: 'table',
           _captcha: 'false',
           'الاسم': form.name,
@@ -56,7 +57,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="bg-ivory-deep py-28 lg:py-36">
+    <section id="contact" className="bg-mist py-28 lg:py-36">
       <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-[1fr_1.2fr] lg:gap-24 lg:px-10">
         {/* اليمين: النص + وسائل التواصل */}
         <div>
@@ -70,9 +71,9 @@ export default function Contact() {
           <Reveal delay={0.3}>
             <a
               href={`mailto:${CONTACT.email}`}
-              className="group mt-10 flex items-center gap-4 rounded-2xl border border-line bg-ivory p-5 transition-all duration-500 hover:-translate-y-1 hover:border-gold/50 hover:shadow-[0_18px_40px_-18px_rgba(150,118,58,0.3)]"
+              className="group mt-10 flex items-center gap-4 rounded-2xl border border-line bg-offwhite p-5 transition-all duration-500 hover:-translate-y-1 hover:border-gold/50 hover:shadow-[0_18px_40px_-18px_rgba(7,63,64,0.25)]"
             >
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-ink text-gold transition-colors duration-500 group-hover:bg-gold group-hover:text-white">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-teal-deep text-gold transition-colors duration-500 group-hover:bg-gold group-hover:text-teal-deep">
                 <Mail size={20} strokeWidth={1.5} />
               </span>
               <span>
@@ -84,31 +85,32 @@ export default function Contact() {
             </a>
           </Reveal>
 
-          <div className="mt-4 grid grid-cols-2 gap-4">
-            {SOCIALS.map(({ label, handle, href, Icon }, i) => (
-              <Reveal key={label} delay={0.35 + 0.08 * i}>
-                <a
-                  href={href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group flex flex-col items-center gap-3 rounded-2xl border border-line bg-ivory p-6 transition-all duration-500 hover:-translate-y-1 hover:border-gold/50 hover:shadow-[0_18px_40px_-18px_rgba(150,118,58,0.3)]"
-                >
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full border border-line text-gold transition-all duration-500 group-hover:bg-gold group-hover:text-white">
-                    <Icon size={20} />
-                  </span>
-                  <span className="font-latin text-xs tracking-wider text-muted" dir="ltr">
-                    {handle}
-                  </span>
-                  <span className="text-xs font-medium text-ink-soft">{label}</span>
-                </a>
-              </Reveal>
-            ))}
-          </div>
+          {SOCIALS.length > 0 && (
+            <div className={`mt-4 grid gap-4 ${SOCIALS.length === 1 ? '' : 'grid-cols-2'}`}>
+              {SOCIALS.map(({ label, href, Icon }, i) => (
+                <Reveal key={label} delay={0.35 + 0.08 * i}>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group flex flex-col items-center gap-3 rounded-2xl border border-line bg-offwhite p-6 transition-all duration-500 hover:-translate-y-1 hover:border-gold/50 hover:shadow-[0_18px_40px_-18px_rgba(7,63,64,0.25)]"
+                  >
+                    <span className="flex h-12 w-12 items-center justify-center rounded-full border border-line text-teal transition-all duration-500 group-hover:bg-gold group-hover:text-teal-deep">
+                      <Icon size={20} />
+                    </span>
+                    <span className="font-latin text-xs tracking-wider text-muted" dir="ltr">
+                      {label}
+                    </span>
+                  </a>
+                </Reveal>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* اليسار: النموذج */}
         <Reveal delay={0.25}>
-          <div className="relative rounded-3xl border border-line bg-ivory p-8 sm:p-12">
+          <div className="relative rounded-3xl border border-line bg-offwhite p-8 sm:p-12">
             <span className="absolute inset-x-12 top-0 h-px bg-gold/60" />
 
             <AnimatePresence mode="wait">
@@ -120,21 +122,21 @@ export default function Contact() {
                   transition={{ duration: 0.5 }}
                   className="flex min-h-[28rem] flex-col items-center justify-center text-center"
                 >
-                  <span className="flex h-20 w-20 items-center justify-center rounded-full bg-gold/10 text-gold">
+                  <span className="flex h-20 w-20 items-center justify-center rounded-full bg-gold/10 text-gold-deep">
                     <CheckCircle2 size={40} strokeWidth={1.2} />
                   </span>
                   <h3 className="font-display mt-8 text-3xl font-semibold text-ink">
                     تم استلام طلبك بنجاح
                   </h3>
                   <p className="mt-4 max-w-sm leading-relaxed font-light text-muted">
-                    شكرًا لتواصلك مع رِفان. سيتواصل معك فريقنا قريبًا لمناقشة وحدتك.
+                    شكرًا لتواصلك مع رُواق الإقامة. سيتواصل معك فريقنا قريبًا لمناقشة وحدتك.
                   </p>
                   <button
                     onClick={() => {
                       setForm(INITIAL)
                       setSent(false)
                     }}
-                    className="mt-8 rounded-full border border-ink/20 px-8 py-3 text-sm font-medium text-ink transition-colors hover:border-gold hover:text-gold-deep"
+                    className="mt-8 rounded-full border border-teal-deep/20 px-8 py-3 text-sm font-medium text-ink transition-colors hover:border-gold hover:text-gold-deep"
                   >
                     إرسال طلب آخر
                   </button>
@@ -235,10 +237,10 @@ export default function Contact() {
                     <button
                       type="submit"
                       disabled={sending}
-                      className="group relative mt-2 w-full overflow-hidden rounded-full bg-ink py-4 text-sm font-medium text-ivory transition-transform duration-300 hover:-translate-y-0.5 disabled:cursor-wait disabled:opacity-70"
+                      className="group relative mt-2 w-full overflow-hidden rounded-full bg-teal-deep py-4 text-sm font-medium text-offwhite transition-transform duration-300 hover:-translate-y-0.5 disabled:cursor-wait disabled:opacity-70"
                     >
                       <span className="absolute inset-0 -translate-x-full bg-gold transition-transform duration-500 ease-out group-hover:translate-x-0" />
-                      <span className="relative flex items-center justify-center gap-2">
+                      <span className="relative flex items-center justify-center gap-2 transition-colors duration-500 group-hover:text-teal-deep">
                         {sending ? 'جارٍ الإرسال...' : 'إرسال الطلب'}
                         {!sending && <Send size={16} className="-scale-x-100" />}
                       </span>

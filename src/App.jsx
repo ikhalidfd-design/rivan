@@ -4,7 +4,7 @@ import About from './components/About'
 import VideoShowcase from './components/VideoShowcase'
 import Services from './components/Services'
 import HowItWorks from './components/HowItWorks'
-import WhyRifan from './components/WhyRifan'
+import WhyRuwaq from './components/WhyRuwaq'
 import Cinematic from './components/Cinematic'
 import OwnerExperience from './components/OwnerExperience'
 import Platforms from './components/Platforms'
@@ -16,7 +16,7 @@ import BackToTop from './components/BackToTop'
 
 export default function App() {
   return (
-    <div className="grain min-h-screen bg-ivory">
+    <div className="grain min-h-screen bg-offwhite">
       <Navbar />
       <main>
         <Hero />
@@ -24,7 +24,7 @@ export default function App() {
         <VideoShowcase />
         <Services />
         <HowItWorks />
-        <WhyRifan />
+        <WhyRuwaq />
         <Cinematic />
         <OwnerExperience />
         <Platforms />

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 300" width="320" height="300">
+  <!-- RUWAQ AL-IKAMA vertical lockup (light backgrounds). -->
+  <g transform="translate(100,0) scale(1)">
+    <polygon points="0.7,30.8 40.5,47.3 40.3,140.1 0.7,140.1" fill="#073F40"/>
+    <path d="M 51.0,0.2 A 64.1 64.1 0 0 1 107.6,101.4 L 77.6,82.6 A 32.5 32.5 0 0 0 50.8,29.6 Z" fill="#1D7273"/>
+    <polygon points="57.3,79.8 72.0,90.5 118.1,139.5 72.7,139.1 51.5,115.0 50.8,101.6" fill="#C5A477"/>
+  </g>
+  <text x="160" y="205" font-family="Alexandria, 'IBM Plex Sans Arabic', sans-serif" font-size="38" font-weight="600" fill="#073F40" direction="rtl" text-anchor="middle">رُواق الإقامة</text>
+  <text x="160" y="245" font-family="'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif" font-size="14" font-weight="400" fill="#1D7273" letter-spacing="7" text-anchor="middle">RUWAQ AL-IKAMA</text>
+</svg>

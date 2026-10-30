@@ -37,7 +37,7 @@ export default function FAQ() {
                     <span
                       className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-all duration-500 ${
                         isOpen
-                          ? 'rotate-45 border-gold bg-gold text-white'
+                          ? 'rotate-45 border-gold bg-gold text-teal-deep'
                           : 'border-line text-gold'
                       }`}
                     >

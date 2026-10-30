@@ -1,0 +1,189 @@
+- generic [ref=f88e1]:
+  - generic:
+    - generic:
+      - generic:
+        - generic [ref=f88e6]:
+          - generic [ref=f88e9]:
+            - link [ref=f88e14] [cursor=pointer]:
+              - /url: /
+            - generic [ref=f88e22]:
+              - link [ref=f88e27] [cursor=pointer]:
+                - /url: /
+              - link [ref=f88e37] [cursor=pointer]:
+                - /url: /reels/
+              - link [ref=f88e49] [cursor=pointer]:
+                - /url: /direct/inbox/
+              - link [ref=f88e60] [cursor=pointer]:
+                - /url: /explore/
+              - link [ref=f88e72] [cursor=pointer]:
+                - /url: "#"
+              - link [ref=f88e83] [cursor=pointer]:
+                - /url: "#"
+              - link [ref=f88e94] [cursor=pointer]:
+                - /url: /ruwaq.sa/
+                - link [ref=f88e100]
+            - generic [ref=f88e102]:
+              - link [ref=f88e105] [cursor=pointer]:
+                - /url: "#"
+              - link [ref=f88e113] [cursor=pointer]:
+                - /url: "#"
+          - generic [ref=f88e121]:
+            - main [ref=f88e122]:
+              - generic [ref=f88e124]:
+                - generic [ref=f88e125]:
+                  - generic [ref=f88e126]:
+                    - generic [ref=f88e130]:
+                      - button [ref=f88e131] [cursor=pointer]:
+                        - generic [ref=f88e132]: Note...
+                      - button [ref=f88e143] [cursor=pointer]
+                    - generic [ref=f88e146]:
+                      - generic [ref=f88e147]:
+                        - link [ref=f88e149] [cursor=pointer]:
+                          - /url: "#"
+                          - heading [level=2] [ref=f88e150]:
+                            - generic [ref=f88e151]: ruwaq.sa
+                        - button [ref=f88e152] [cursor=pointer]
+                      - generic [ref=f88e157]:
+                        - generic [ref=f88e159]:
+                          - generic [ref=f88e160]: "10"
+                          - text: posts
+                        - link [ref=f88e162] [cursor=pointer]:
+                          - /url: "#"
+                          - generic [ref=f88e163]:
+                            - generic [ref=f88e164]: "0"
+                            - text: followers
+                        - link [ref=f88e166] [cursor=pointer]:
+                          - /url: "#"
+                          - generic [ref=f88e167]:
+                            - generic [ref=f88e168]: "0"
+                            - text: following
+                  - generic [ref=f88e172]:
+                    - button [ref=f88e173] [cursor=pointer]:
+                      - generic [ref=f88e174]: إدارة وتشغيل الوحدات السكنية للإيجار اليومي 🏠 الحجوزات · الضيوف · التنظيف · الصيانة وحدتك باسمك ونحن نديرها باحتراف
+                    - generic [ref=f88e175]:
+                      - text: ...
+                      - button [ref=f88e176] [cursor=pointer]:
+                        - generic [ref=f88e177]: more
+                  - generic [ref=f88e182]:
+                    - link [ref=f88e184] [cursor=pointer]:
+                      - /url: /accounts/edit/
+                      - text: Edit Profile
+                    - link [ref=f88e186] [cursor=pointer]:
+                      - /url: /archive/stories/
+                      - text: View archive
+                  - menu [ref=f88e188]:
+                    - list [ref=f88e192]:
+                      - listitem [ref=f88e193]
+                      - listitem [ref=f88e194]
+                      - listitem [ref=f88e195]:
+                        - button [ref=f88e198] [cursor=pointer]:
+                          - generic [ref=f88e204]: New
+                - tablist [ref=f88e208]:
+                  - link [ref=f88e210] [cursor=pointer]:
+                    - /url: /ruwaq.sa/
+                  - link [ref=f88e223] [cursor=pointer]:
+                    - /url: /ruwaq.sa/saved/
+                  - link [ref=f88e228] [cursor=pointer]:
+                    - /url: /ruwaq.sa/tagged/
+                - generic [ref=f88e237]:
+                  - generic [ref=f88e238]:
+                    - link [ref=f88e240] [cursor=pointer]:
+                      - /url: /ruwaq.sa/p/DfIL4xjEZju/
+                    - link [ref=f88e246] [cursor=pointer]:
+                      - /url: /ruwaq.sa/p/DfIL0SxETvZ/
+                    - link [ref=f88e252] [cursor=pointer]:
+                      - /url: /ruwaq.sa/p/DfILoaOERcn/
+                  - generic [ref=f88e257]:
+                    - link [ref=f88e259] [cursor=pointer]:
+                      - /url: /ruwaq.sa/p/DfILhWkkemz/
+                    - link [ref=f88e265] [cursor=pointer]:
+                      - /url: /ruwaq.sa/p/DfIK0v2kZOR/
+                    - link [ref=f88e271] [cursor=pointer]:
+                      - /url: /ruwaq.sa/p/DfIKk6pkdZ4/
+                  - generic [ref=f88e276]:
+                    - link [ref=f88e278] [cursor=pointer]:
+                      - /url: /ruwaq.sa/p/DfIKWK4EaCq/
+                    - link [ref=f88e284] [cursor=pointer]:
+                      - /url: /ruwaq.sa/p/DfIKNlQkR8W/
+                    - link [ref=f88e290] [cursor=pointer]:
+                      - /url: /ruwaq.sa/p/DfIKG44EWJ1/
+                  - link [ref=f88e297] [cursor=pointer]:
+                    - /url: /ruwaq.sa/p/DfIJ111kZeL/
+            - contentinfo [ref=f88e304]:
+              - generic [ref=f88e305]:
+                - generic [ref=f88e307]:
+                  - link [ref=f88e309] [cursor=pointer]:
+                    - /url: https://about.meta.com/
+                    - generic [ref=f88e310]: Meta
+                  - link [ref=f88e312] [cursor=pointer]:
+                    - /url: https://about.instagram.com/
+                    - generic [ref=f88e313]: About
+                  - link [ref=f88e315] [cursor=pointer]:
+                    - /url: https://about.instagram.com/blog/
+                    - generic [ref=f88e316]: Blog
+                  - link [ref=f88e318] [cursor=pointer]:
+                    - /url: https://about.instagram.com/about-us/careers
+                    - generic [ref=f88e319]: Jobs
+                  - link [ref=f88e321] [cursor=pointer]:
+                    - /url: https://help.instagram.com/
+                    - generic [ref=f88e322]: Help
+                  - link [ref=f88e324] [cursor=pointer]:
+                    - /url: https://developers.facebook.com/docs/instagram
+                    - generic [ref=f88e325]: API
+                  - link [ref=f88e327] [cursor=pointer]:
+                    - /url: /legal/privacy/
+                    - generic [ref=f88e328]: Privacy
+                  - link [ref=f88e330] [cursor=pointer]:
+                    - /url: /legal/terms/
+                    - generic [ref=f88e331]: Terms
+                  - link [ref=f88e333] [cursor=pointer]:
+                    - /url: /explore/locations/
+                    - generic [ref=f88e334]: Locations
+                  - link [ref=f88e336] [cursor=pointer]:
+                    - /url: /popular/
+                    - generic [ref=f88e337]: Popular
+                  - link [ref=f88e339] [cursor=pointer]:
+                    - /url: /web/lite/
+                    - generic [ref=f88e340]: Instagram Lite
+                  - link [ref=f88e342] [cursor=pointer]:
+                    - /url: https://www.meta.ai/?utm_source=foa_web_footer
+                    - generic [ref=f88e343]: Meta AI
+                  - link [ref=f88e345] [cursor=pointer]:
+                    - /url: https://muse.ai/
+                    - generic [ref=f88e346]: Muse
+                  - link [ref=f88e348] [cursor=pointer]:
+                    - /url: https://www.threads.com/
+                    - generic [ref=f88e349]: Threads
+                  - link [ref=f88e351] [cursor=pointer]:
+                    - /url: https://www.facebook.com/help/instagram/261704639352628
+                    - generic [ref=f88e352]: Contact uploading and non-users
+                - generic [ref=f88e353]:
+                  - generic [ref=f88e354] [cursor=pointer]:
+                    - generic [ref=f88e355]: English (UK)
+                    - combobox [ref=f88e361]
+                  - generic [ref=f88e362]: © 2026 Instagram from Meta
+        - button [ref=f88e365] [cursor=pointer]:
+          - generic "Messages" [ref=f88e366]:
+            - generic [ref=f88e367]:
+              - img "Messages" [ref=f88e370]
+              - generic [ref=f88e373]: Messages
+  - generic [ref=f88e376]:
+    - button [ref=f88e379] [cursor=pointer]:
+      - img "Close" [ref=f88e381]
+    - dialog "Crop" [ref=f88e386]:
+      - generic [ref=f88e390]:
+        - generic [ref=f88e394]:
+          - heading "Crop" [active] [level=1] [ref=f88e397]
+          - button [ref=f88e400] [cursor=pointer]:
+            - img "Back" [ref=f88e403]
+          - button "Next" [ref=f88e407] [cursor=pointer]
+        - generic [ref=f88e413]:
+          - button [ref=f88e418] [cursor=pointer]:
+            - button [ref=f88e419]:
+              - img "Select Crop" [ref=f88e421]
+          - button [ref=f88e427] [cursor=pointer]:
+            - button [ref=f88e428]:
+              - img "Select Zoom" [ref=f88e430]
+          - button [ref=f88e436] [cursor=pointer]:
+            - button [ref=f88e437]:
+              - img "Open Media Gallery" [ref=f88e439]

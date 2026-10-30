@@ -1,5 +1,5 @@
 /**
- * Ambient cinematic score for the RIFAN film — generated with Web Audio.
+ * Ambient cinematic score for the RUWAQ film — generated with Web Audio.
  * A slow, warm chord pad (Fmaj7 → Dm9 → Am7 → Cmaj9) with a soft low-pass
  * filter. No files needed; starts only after a user gesture (unmute).
  */

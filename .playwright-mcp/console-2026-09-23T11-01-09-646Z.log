@@ -1,9 +1,0 @@
-[    6713ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5199/node_modules/.vite/deps/chunk-SVG7M4VJ.js?v=1cc9e4b3:21606
-[    7106ms] [WARNING] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. @ http://localhost:5199/node_modules/.vite/deps/framer-motion.js?v=43dec0a9:693
-[   11875ms] [ERROR] Failed to load resource: net::ERR_INSUFFICIENT_RESOURCES @ http://localhost:5199/@react-refresh:0
-[   12023ms] [ERROR] Failed to load resource: net::ERR_INSUFFICIENT_RESOURCES @ http://localhost:5199/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=da737904:0
-[   12023ms] [ERROR] Failed to load resource: net::ERR_INSUFFICIENT_RESOURCES @ http://localhost:5199/node_modules/.vite/deps/react.js?v=da737904:0
-[   12023ms] [ERROR] Failed to load resource: net::ERR_INSUFFICIENT_RESOURCES @ http://localhost:5199/node_modules/.vite/deps/react-dom_client.js?v=6afa2fb7:0
-[   12157ms] [ERROR] Failed to load resource: net::ERR_INSUFFICIENT_RESOURCES @ http://localhost:5199/src/index.css:0
-[   12206ms] [ERROR] Failed to load resource: net::ERR_INSUFFICIENT_RESOURCES @ http://localhost:5199/src/App.jsx:0
-[   12258ms] [ERROR] Failed to load resource: net::ERR_INSUFFICIENT_RESOURCES @ http://localhost:5199/node_modules/vite/dist/client/env.mjs:0
