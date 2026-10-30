@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ruwaq-al-ikama.com/sitemap.xml
+Sitemap: https://ruwaq.vercel.app/sitemap.xml
