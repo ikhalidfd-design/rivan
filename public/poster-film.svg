@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="75%">
+      <stop offset="0%" stop-color="#35301f"/>
+      <stop offset="55%" stop-color="#211d18"/>
+      <stop offset="100%" stop-color="#17140f"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#96763a"/>
+      <stop offset="50%" stop-color="#d9c9a8"/>
+      <stop offset="100%" stop-color="#96763a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+
+  <!-- hairline frame -->
+  <rect x="90" y="70" width="1740" height="940" fill="none" stroke="#b08d4f" stroke-opacity="0.35" stroke-width="2"/>
+
+  <!-- corner accents -->
+  <path d="M90 130 V70 h60" fill="none" stroke="#d9c9a8" stroke-width="4"/>
+  <path d="M1830 130 V70 h-60" fill="none" stroke="#d9c9a8" stroke-width="4"/>
+  <path d="M90 950 v60 h60" fill="none" stroke="#d9c9a8" stroke-width="4"/>
+  <path d="M1830 950 v60 h-60" fill="none" stroke="#d9c9a8" stroke-width="4"/>
+
+  <!-- wordmark -->
+  <rect x="760" y="368" width="400" height="2" fill="url(#gold)"/>
+  <text x="960" y="540" text-anchor="middle" fill="#fbf9f6" font-family="'El Messiri','Tajawal',serif" font-size="150" font-weight="600">رِفان</text>
+  <text x="960" y="625" text-anchor="middle" fill="#b08d4f" font-family="'Marcellus',serif" font-size="42" letter-spacing="22">RIFAN</text>
+  <rect x="760" y="668" width="400" height="2" fill="url(#gold)"/>
+
+  <text x="960" y="740" text-anchor="middle" fill="#d9c9a8" fill-opacity="0.85" font-family="'Tajawal',sans-serif" font-size="30" font-weight="300">Luxury Hospitality · Professional Property Management</text>
+
+  <!-- play affordance -->
+  <circle cx="960" cy="880" r="46" fill="none" stroke="#d9c9a8" stroke-opacity="0.6" stroke-width="2.5"/>
+  <path d="M948 856 L948 904 L990 880 Z" fill="#d9c9a8" fill-opacity="0.9"/>
+</svg>

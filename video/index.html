@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "El Messiri";
+        src: url("fonts/ElMessiri-700.ttf") format("truetype");
+        font-weight: 700;
+      }
+      @font-face {
+        font-family: "El Messiri";
+        src: url("fonts/ElMessiri-400.ttf") format("truetype");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Tajawal";
+        src: url("fonts/Tajawal-700.ttf") format("truetype");
+        font-weight: 700;
+      }
+      @font-face {
+        font-family: "Tajawal";
+        src: url("fonts/Tajawal-400.ttf") format("truetype");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Marcellus";
+        src: url("fonts/Marcellus-400.ttf") format("truetype");
+        font-weight: 400;
+      }
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #0a0908;
+        font-family: "Tajawal", "El Messiri", sans-serif;
+        color: #fbf9f6;
+      }
+      .scene {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        opacity: 0;
+      }
+      #s1 { z-index: 1; opacity: 1; }
+      #s2 { z-index: 2; }
+      #s3 { z-index: 3; }
+      #s4 { z-index: 4; }
+      #s5 { z-index: 5; }
+      #s6 { z-index: 6; }
+      #s7 { z-index: 7; }
+      #s8 { z-index: 8; }
+
+      /* ---- photo backdrop ---- */
+      .bg {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+      }
+      .bg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        will-change: transform;
+      }
+      .bg-scrim {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(10, 9, 8, 0.72) 0%,
+          rgba(10, 9, 8, 0.2) 30%,
+          rgba(10, 9, 8, 0.55) 48%,
+          rgba(10, 9, 8, 0.95) 100%
+        );
+      }
+      .bg-scrim.deep {
+        background: linear-gradient(
+          180deg,
+          rgba(10, 9, 8, 0.82) 0%,
+          rgba(10, 9, 8, 0.55) 40%,
+          rgba(10, 9, 8, 0.92) 100%
+        );
+      }
+      .warm-wash {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse at 50% 30%,
+          rgba(176, 141, 79, 0.16) 0%,
+          rgba(176, 141, 79, 0) 60%
+        );
+        mix-blend-mode: screen;
+      }
+
+      /* ---- top metadata bar ---- */
+      .topbar {
+        position: absolute;
+        top: 92px;
+        left: 90px;
+        right: 90px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: "Marcellus", serif;
+        font-size: 26px;
+        letter-spacing: 0.42em;
+        color: #d9c9a8;
+        z-index: 5;
+      }
+      .topbar .idx { color: #b08d4f; font-variant-numeric: tabular-nums; }
+      .topbar .tick {
+        flex: 1;
+        height: 1px;
+        background: rgba(217, 201, 168, 0.35);
+        margin: 0 34px;
+        transform-origin: 50% 50%;
+      }
+
+      .scene-content {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        padding: 200px 110px 210px;
+        gap: 26px;
+        box-sizing: border-box;
+        z-index: 4;
+      }
+      .scene-content.center { align-items: center; text-align: center; }
+
+      .kicker {
+        font-size: 32px;
+        font-weight: 400;
+        color: #d9c9a8;
+        letter-spacing: 0;
+      }
+      .gold-rule {
+        height: 3px;
+        background: linear-gradient(90deg, rgba(176,141,79,0) 0%, #b08d4f 30%, #d9c9a8 100%);
+        width: 300px;
+        transform-origin: 100% 50%;
+      }
+      .particle {
+        position: absolute;
+        border-radius: 50%;
+        background: #d9c9a8;
+        pointer-events: none;
+      }
+
+      /* ---- scene 1 : hook + pain points ---- */
+      .s1-title {
+        font-family: "El Messiri", serif;
+        font-weight: 700;
+        font-size: 108px;
+        line-height: 1.28;
+        max-width: 860px;
+        margin: 0;
+        text-shadow: 0 6px 40px rgba(0, 0, 0, 0.65);
+      }
+      .s1-title .gold { color: #d9c9a8; }
+      .s1-pains { display: flex; flex-direction: column; gap: 18px; margin-top: 20px; }
+      .s1-pain {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        font-size: 44px;
+        font-weight: 700;
+        color: #efe9dd;
+        text-shadow: 0 4px 26px rgba(0, 0, 0, 0.8);
+      }
+      .s1-pain .x {
+        font-family: "Marcellus", serif;
+        color: #b08d4f;
+        font-size: 38px;
+        width: 52px;
+        height: 52px;
+        border: 2px solid rgba(176, 141, 79, 0.75);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+      }
+
+      /* ---- scene 2 : brand reveal ---- */
+      #s2 .scene-content { justify-content: center; gap: 38px; }
+      .brand-frame {
+        position: relative;
+        padding: 64px 78px;
+        border: 1px solid rgba(217, 201, 168, 0.4);
+        background: rgba(10, 9, 8, 0.34);
+        backdrop-filter: blur(6px);
+      }
+      .brand-frame .ftick {
+        position: absolute;
+        width: 46px;
+        height: 46px;
+        border-color: #d9c9a8;
+        border-style: solid;
+        border-width: 0;
+      }
+      .brand-frame .ftick.a { top: -3px; right: -3px; border-top-width: 4px; border-right-width: 4px; }
+      .brand-frame .ftick.b { bottom: -3px; left: -3px; border-bottom-width: 4px; border-left-width: 4px; }
+      .brand-logo { width: 380px; height: 380px; object-fit: contain; display: block; }
+      .s2-tagline {
+        font-family: "El Messiri", serif;
+        font-weight: 700;
+        font-size: 72px;
+        color: #d9c9a8;
+        text-shadow: 0 6px 40px rgba(0, 0, 0, 0.7);
+      }
+      .s2-latin { display: none; }
+
+      /* ---- scene 3 : platforms ---- */
+      #s3 .scene-content { justify-content: flex-end; }
+      .s3-header {
+        font-family: "El Messiri", serif;
+        font-weight: 700;
+        font-size: 78px;
+        line-height: 1.3;
+        max-width: 860px;
+        margin: 0 0 10px;
+        text-shadow: 0 6px 36px rgba(0, 0, 0, 0.7);
+      }
+      .s3-header .gold { color: #d9c9a8; }
+      .s3-sub { font-size: 34px; color: #cfc4b2; font-weight: 400; }
+      .s3-platforms { display: flex; flex-direction: column; gap: 22px; margin-top: 44px; width: 100%; }
+      .s3-plat {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        padding: 26px 40px;
+        border: 1px solid rgba(217, 201, 168, 0.35);
+        background: rgba(10, 9, 8, 0.5);
+        backdrop-filter: blur(4px);
+      }
+      .s3-plat .dot {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #b08d4f;
+        box-shadow: 0 0 18px rgba(176, 141, 79, 0.8);
+        flex: 0 0 auto;
+      }
+      .s3-plat .name {
+        font-family: "Marcellus", serif;
+        font-size: 44px;
+        letter-spacing: 0.18em;
+        color: #fbf9f6;
+      }
+      .s3-plat .ar {
+        margin-right: auto;
+        font-size: 30px;
+        color: #b08d4f;
+        font-weight: 700;
+      }
+
+      /* ---- scene 4 : services ---- */
+      .s4-header {
+        font-size: 36px;
+        color: #d9c9a8;
+        font-weight: 700;
+        margin-bottom: 8px;
+        text-shadow: 0 3px 22px rgba(0, 0, 0, 0.85);
+      }
+      .s4-row { display: flex; align-items: baseline; gap: 30px; margin-top: 34px; }
+      .s4-idx {
+        font-family: "Marcellus", serif;
+        font-size: 34px;
+        color: #d9c9a8;
+        font-variant-numeric: tabular-nums;
+        min-width: 64px;
+        text-align: right;
+        text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8);
+      }
+      .s4-name {
+        font-family: "El Messiri", serif;
+        font-weight: 700;
+        font-size: 72px;
+        line-height: 1.3;
+        text-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+      }
+      .s4-note {
+        align-self: center;
+        font-size: 32px;
+        color: #cfc4b2;
+        font-weight: 400;
+        margin-right: auto;
+        padding-top: 14px;
+      }
+      .s4-line {
+        align-self: center;
+        height: 2px;
+        flex: 1;
+        background: linear-gradient(270deg, rgba(176,141,79,0.55), rgba(176,141,79,0));
+        transform-origin: 100% 50%;
+      }
+
+      /* ---- scene 5 : reports dashboard ---- */
+      .s5-title {
+        font-family: "El Messiri", serif;
+        font-weight: 700;
+        font-size: 84px;
+        line-height: 1.3;
+        max-width: 860px;
+        margin: 0;
+        text-shadow: 0 6px 36px rgba(0, 0, 0, 0.7);
+      }
+      .s5-title .gold { color: #d9c9a8; }
+      .s5-stats { display: flex; gap: 26px; margin-top: 48px; width: 100%; }
+      .s5-stat {
+        flex: 1;
+        padding: 34px 20px 30px;
+        border: 1px solid rgba(217, 201, 168, 0.35);
+        background: rgba(10, 9, 8, 0.5);
+        backdrop-filter: blur(4px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+      }
+      .s5-stat .bar {
+        width: 64px;
+        height: 6px;
+        background: linear-gradient(90deg, #b08d4f, #d9c9a8);
+      }
+      .s5-stat .label {
+        font-family: "El Messiri", serif;
+        font-weight: 700;
+        font-size: 46px;
+        color: #fbf9f6;
+      }
+      .s5-stat .cap { font-size: 29px; color: #b08d4f; font-weight: 700; }
+      .s5-badge {
+        margin-top: 46px;
+        border: 2px solid #b08d4f;
+        border-radius: 999px;
+        padding: 20px 64px;
+        font-size: 42px;
+        font-weight: 700;
+        color: #d9c9a8;
+        background: rgba(10, 9, 8, 0.3);
+      }
+
+      /* ---- scene 6 : trust ---- */
+      .s6-title {
+        font-family: "El Messiri", serif;
+        font-weight: 700;
+        font-size: 96px;
+        line-height: 1.3;
+        margin: 0;
+        text-shadow: 0 6px 36px rgba(0, 0, 0, 0.7);
+      }
+      .s6-big {
+        font-family: "El Messiri", serif;
+        font-weight: 700;
+        font-size: 150px;
+        color: #d9c9a8;
+        line-height: 1.1;
+        text-shadow: 0 10px 60px rgba(0, 0, 0, 0.8);
+      }
+      .s6-feats { display: flex; flex-direction: column; gap: 24px; margin-top: 40px; }
+      .s6-feat { display: flex; align-items: center; gap: 22px; font-size: 42px; color: #efe9dd; font-weight: 400; }
+      .s6-dot {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #b08d4f;
+        box-shadow: 0 0 18px rgba(176, 141, 79, 0.8);
+        flex: 0 0 auto;
+      }
+
+      /* ---- scene 7 : transformation ---- */
+      #s7 .scene-content { justify-content: center; gap: 30px; }
+      .s7-city {
+        font-size: 40px;
+        color: #d9c9a8;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+      }
+      .s7-from {
+        font-family: "El Messiri", serif;
+        font-weight: 700;
+        font-size: 88px;
+        color: #8a8074;
+        position: relative;
+        line-height: 1.2;
+      }
+      .s7-from .strike {
+        position: absolute;
+        left: -4px;
+        right: -4px;
+        top: 54%;
+        height: 8px;
+        background: #b08d4f;
+        border-radius: 4px;
+        transform-origin: 100% 50%;
+      }
+      .s7-arrow {
+        font-family: "Marcellus", serif;
+        font-size: 60px;
+        color: #b08d4f;
+        line-height: 1;
+      }
+      .s7-to {
+        font-family: "El Messiri", serif;
+        font-weight: 700;
+        font-size: 118px;
+        line-height: 1.25;
+        color: #fbf9f6;
+        text-shadow: 0 6px 40px rgba(0, 0, 0, 0.7);
+        max-width: 860px;
+      }
+      .s7-to .gold { color: #d9c9a8; }
+
+      /* ---- scene 8 : end card ---- */
+      #s8 .scene-content { justify-content: center; gap: 28px; }
+      .s8-logo {
+        width: 190px;
+        height: 190px;
+        object-fit: contain;
+        margin-bottom: 14px;
+        filter: drop-shadow(0 0 40px rgba(176, 141, 79, 0.45));
+      }
+      .s8-label { font-size: 34px; color: #d9c9a8; font-weight: 400; }
+      .s8-head {
+        font-family: "El Messiri", serif;
+        font-weight: 700;
+        font-size: 86px;
+        line-height: 1.4;
+        margin: 0;
+        text-shadow: 0 6px 40px rgba(0, 0, 0, 0.75);
+        max-width: 860px;
+      }
+      .s8-head .gold { color: #d9c9a8; }
+      .s8-cta {
+        margin-top: 44px;
+        border: 3px solid #b08d4f;
+        border-radius: 999px;
+        padding: 30px 90px;
+        font-size: 46px;
+        color: #fbf9f6;
+        font-weight: 700;
+        position: relative;
+        background: rgba(10, 9, 8, 0.3);
+      }
+      .s8-social {
+        margin-top: 26px;
+        font-family: "Marcellus", serif;
+        font-size: 30px;
+        letter-spacing: 0.3em;
+        color: #b08d4f;
+      }
+
+      /* ---- root overlays ---- */
+      #leak-warm {
+        position: absolute;
+        inset: 0;
+        background: #b08d4f;
+        opacity: 0;
+        z-index: 50;
+        mix-blend-mode: screen;
+      }
+      .leak {
+        position: absolute;
+        width: 2400px;
+        height: 1600px;
+        border-radius: 50%;
+        opacity: 0;
+        z-index: 51;
+      }
+      #leak-1 {
+        top: -300px;
+        left: -500px;
+        background: radial-gradient(ellipse, rgba(217,201,168,0.85) 0%, rgba(176,141,79,0.35) 40%, rgba(176,141,79,0) 70%);
+      }
+      #leak-2 {
+        bottom: -400px;
+        right: -600px;
+        background: radial-gradient(ellipse, rgba(150,118,58,0.8) 0%, rgba(150,118,58,0.3) 45%, rgba(150,118,58,0) 70%);
+      }
+      #grain {
+        position: absolute;
+        inset: 0;
+        z-index: 45;
+        opacity: 0.12;
+        mix-blend-mode: overlay;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+      #fade-black {
+        position: absolute;
+        inset: 0;
+        background: #0a0908;
+        opacity: 0;
+        z-index: 60;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-width="1080"
+      data-height="1920"
+      data-start="0"
+      data-duration="55"
+    >
+      <!-- Scene 1 : hook + pain points (0 - 6.8) -->
+      <div id="s1" class="scene" dir="rtl">
+        <div class="bg" id="s1-bg"><img src="assets/bg1.jpg" alt="" /></div>
+        <div class="bg-scrim" data-layout-ignore></div>
+        <div class="warm-wash" data-layout-ignore></div>
+        <div class="topbar" id="s1-topbar" data-layout-ignore>
+          <span>RIFAN</span><span class="tick"></span><span class="idx">01 / 08</span>
+        </div>
+        <div class="scene-content">
+          <div class="kicker" id="s1-kicker">تملّك وحدة سكنية مفروشة؟</div>
+          <div class="gold-rule" id="s1-rule"></div>
+          <h1 class="s1-title" id="s1-title">وتتعب من <span class="gold">كل هذا؟</span></h1>
+          <div class="s1-pains">
+            <div class="s1-pain" id="pain1"><span class="x">✕</span>متابعة الحجوزات</div>
+            <div class="s1-pain" id="pain2"><span class="x">✕</span>خدمة الضيوف</div>
+            <div class="s1-pain" id="pain3"><span class="x">✕</span>التنظيف والتجهيز</div>
+            <div class="s1-pain" id="pain4"><span class="x">✕</span>الصيانة والمشاكل</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scene 2 : brand reveal (6.9 - 8.9) -->
+      <div id="s2" class="scene" dir="rtl">
+        <div class="bg" id="s2-bg"><img src="assets/bg2.jpg" alt="" /></div>
+        <div class="bg-scrim deep" data-layout-ignore></div>
+        <div class="warm-wash" data-layout-ignore></div>
+        <div class="topbar" id="s2-topbar" data-layout-ignore>
+          <span>RIFAN</span><span class="tick"></span><span class="idx">02 / 08</span>
+        </div>
+        <div class="scene-content center">
+          <div class="brand-frame" id="brand-frame">
+            <div class="ftick a" data-layout-ignore></div>
+            <div class="ftick b" data-layout-ignore></div>
+            <img class="brand-logo" id="brand-logo" src="assets/logo.png" alt="رِفان" />
+          </div>
+          <div class="s2-tagline" id="s2-tagline">خلّها على رِفان</div>
+        </div>
+      </div>
+
+      <!-- Scene 3 : full management + platforms (9.2 - 17.7) -->
+      <div id="s3" class="scene" dir="rtl">
+        <div class="bg" id="s3-bg"><img src="assets/bg3.jpg" alt="" /></div>
+        <div class="bg-scrim" data-layout-ignore></div>
+        <div class="warm-wash" data-layout-ignore></div>
+        <div class="topbar" id="s3-topbar" data-layout-ignore>
+          <span>RIFAN</span><span class="tick"></span><span class="idx">03 / 08</span>
+        </div>
+        <div class="scene-content">
+          <h2 class="s3-header" id="s3-header">رِفان تدير وحدتك <span class="gold">من الألف إلى الياء</span></h2>
+          <div class="s3-sub" id="s3-sub">حجوزاتك على أهم منصات الإيجار:</div>
+          <div class="s3-platforms">
+            <div class="s3-plat" id="plat1"><span class="dot"></span><span class="name">AIRBNB</span><span class="ar">إدارة كاملة</span></div>
+            <div class="s3-plat" id="plat2"><span class="dot"></span><span class="name">BOOKING.COM</span><span class="ar">إدارة كاملة</span></div>
+            <div class="s3-plat" id="plat3"><span class="dot"></span><span class="name">GATHERN</span><span class="ar">إدارة كاملة</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scene 4 : services (17.9 - 26.3) -->
+      <div id="s4" class="scene" dir="rtl">
+        <div class="bg" id="s4-bg"><img src="assets/bg4.jpg" alt="" /></div>
+        <div class="bg-scrim" data-layout-ignore></div>
+        <div class="warm-wash" data-layout-ignore></div>
+        <div class="topbar" id="s4-topbar" data-layout-ignore>
+          <span>RIFAN</span><span class="tick"></span><span class="idx">04 / 08</span>
+        </div>
+        <div class="scene-content">
+          <div class="s4-header" id="s4-header">وتتفاصيل وحدتك مكانها الأول</div>
+          <div class="s4-row" id="row1">
+            <div class="s4-idx">01</div>
+            <div class="s4-name">خدمة ضيوف فندقية</div>
+            <div class="s4-note">بمعايير الضيافة</div>
+            <div class="s4-line"></div>
+          </div>
+          <div class="s4-row" id="row2">
+            <div class="s4-idx">02</div>
+            <div class="s4-name">تنظيف وتجهيز</div>
+            <div class="s4-note">جاهزة لكل ضيف</div>
+            <div class="s4-line"></div>
+          </div>
+          <div class="s4-row" id="row3">
+            <div class="s4-idx">03</div>
+            <div class="s4-name">صيانة وقائية</div>
+            <div class="s4-note">قبل لا تصير مشكلة</div>
+            <div class="s4-line"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scene 5 : reports (26.6 - 33.6) -->
+      <div id="s5" class="scene" dir="rtl">
+        <div class="bg" id="s5-bg"><img src="assets/bg5.jpg" alt="" /></div>
+        <div class="bg-scrim deep" data-layout-ignore></div>
+        <div class="warm-wash" data-layout-ignore></div>
+        <div class="topbar" id="s5-topbar" data-layout-ignore>
+          <span>RIFAN</span><span class="tick"></span><span class="idx">05 / 08</span>
+        </div>
+        <div class="scene-content">
+          <h2 class="s5-title" id="s5-title">وأنت تتابع أداء وحدتك <span class="gold">بتقارير واضحة</span></h2>
+          <div class="s5-stats">
+            <div class="s5-stat" id="stat1"><div class="bar"></div><div class="label">الإشغال</div><div class="cap">مستمر</div></div>
+            <div class="s5-stat" id="stat2"><div class="bar"></div><div class="label">الإيرادات</div><div class="cap">دورية</div></div>
+            <div class="s5-stat" id="stat3"><div class="bar"></div><div class="label">التقييمات</div><div class="cap">مباشرة</div></div>
+          </div>
+          <div class="s5-badge" id="s5-badge">وأنت مرتاح</div>
+        </div>
+      </div>
+
+      <!-- Scene 6 : trust (33.9 - 39.3) -->
+      <div id="s6" class="scene" dir="rtl">
+        <div class="bg" id="s6-bg"><img src="photos/photo-1582719508461-905c673771fd.jpg" alt="" /></div>
+        <div class="bg-scrim" data-layout-ignore></div>
+        <div class="warm-wash" data-layout-ignore></div>
+        <div class="topbar" id="s6-topbar" data-layout-ignore>
+          <span>RIFAN</span><span class="tick"></span><span class="idx">06 / 08</span>
+        </div>
+        <div class="scene-content">
+          <h2 class="s6-title" id="s6-title">وحدتك تبقى</h2>
+          <div class="s6-big" id="s6-big">باسمك</div>
+          <div class="gold-rule" id="s6-rule" style="transform-origin: 100% 50%"></div>
+          <div class="s6-feats">
+            <div class="s6-feat" id="feat1"><span class="s6-dot"></span>عقد مرن — بدون إلزام طويل</div>
+            <div class="s6-feat" id="feat2"><span class="s6-dot"></span>صفر رسوم قبل بدء التشغيل</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scene 7 : transformation (39.6 - 46.6) -->
+      <div id="s7" class="scene" dir="rtl">
+        <div class="bg" id="s7-bg"><img src="photos/photo-1611892440504-42a792e24d32.jpg" alt="" /></div>
+        <div class="bg-scrim deep" data-layout-ignore></div>
+        <div class="warm-wash" data-layout-ignore></div>
+        <div class="topbar" id="s7-topbar" data-layout-ignore>
+          <span>RIFAN</span><span class="tick"></span><span class="idx">07 / 08</span>
+        </div>
+        <div class="scene-content center">
+          <div class="s7-city" id="s7-city">من الرياض إلى المنطقة الشرقية</div>
+          <div class="s7-from" id="s7-from">عبء<div class="strike" id="s7-strike"></div></div>
+          <div class="s7-arrow" id="s7-arrow">↓</div>
+          <div class="s7-to" id="s7-to">استثمار <span class="gold">يشتغل عنك</span></div>
+        </div>
+      </div>
+
+      <!-- Scene 8 : end card (46.9 - 55) -->
+      <div id="s8" class="scene" dir="rtl">
+        <div class="bg" id="s8-bg"><img src="photos/photo-1618773928121-c32242e63f39.jpg" alt="" /></div>
+        <div class="bg-scrim deep" data-layout-ignore></div>
+        <div class="warm-wash" data-layout-ignore></div>
+        <div class="topbar" id="s8-topbar" data-layout-ignore>
+          <span>RIFAN</span><span class="tick"></span><span class="idx">08 / 08</span>
+        </div>
+        <div class="scene-content center">
+          <img class="s8-logo" id="s8-logo" src="assets/logo-mark.png" alt="رِفان" />
+          <div class="s8-label" id="s8-label">رِفان</div>
+          <h2 class="s8-head" id="s8-head">إدارة وحدات <span class="gold">بمعايير فندقية</span></h2>
+          <div class="s8-cta" id="s8-cta">اطلب تقييمًا مجانيًا لوحدتك</div>
+          <div class="s8-social" id="s8-social">INSTAGRAM · TIKTOK — I0.RIFAN</div>
+        </div>
+      </div>
+
+      <!-- root overlays -->
+      <div id="grain" data-layout-ignore data-layout-allow-occlusion></div>
+      <div id="leak-warm" data-layout-ignore data-layout-allow-occlusion></div>
+      <div class="leak" id="leak-1" data-layout-ignore data-layout-allow-occlusion></div>
+      <div class="leak" id="leak-2" data-layout-ignore data-layout-allow-occlusion></div>
+      <div id="fade-black" data-layout-ignore data-layout-allow-occlusion></div>
+
+      <!-- audio -->
+      <audio id="vo" data-start="0" data-duration="50.44" data-track-index="1" data-volume="1" src="assets/vo_owner.wav"></audio>
+      <audio id="music" data-start="0" data-duration="55" data-track-index="2" data-volume="0.26" src="assets/music_long.wav"></audio>
+    </div>
+
+    <script>
+      // deterministic particles
+      function mulberry32(a) {
+        return function () {
+          a |= 0; a = (a + 0x6d2b79f5) | 0;
+          var t = Math.imul(a ^ (a >>> 15), 1 | a);
+          t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+          return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+        };
+      }
+      function seedParticles(sceneId, count, seed) {
+        var rnd = mulberry32(seed);
+        var scene = document.getElementById(sceneId);
+        for (var i = 0; i < count; i++) {
+          var p = document.createElement("div");
+          p.className = "particle";
+          p.setAttribute("data-layout-ignore", "");
+          var size = 3 + rnd() * 5;
+          p.style.width = size + "px";
+          p.style.height = size + "px";
+          p.style.right = rnd() * 1000 + "px";
+          p.style.top = 300 + rnd() * 1400 + "px";
+          p.dataset.drift = (60 + rnd() * 110).toFixed(1);
+          p.dataset.base = (0.18 + rnd() * 0.4).toFixed(2);
+          p.style.opacity = "0";
+          scene.appendChild(p);
+        }
+      }
+      seedParticles("s1", 14, 42);
+      seedParticles("s2", 10, 7);
+      seedParticles("s8", 12, 99);
+
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+      var D = 55;
+
+      // ambient grain drift (seekable)
+      tl.fromTo("#grain", { backgroundPosition: "0px 0px" }, { backgroundPosition: "140px 90px", duration: D, ease: "none" }, 0);
+
+      /* ============ SCENE 1 : hook (0 - 6.7) — VO 0.24-6.9 ============ */
+      tl.fromTo("#s1-bg img", { scale: 1.12, y: 0 }, { scale: 1.2, y: -30, duration: 7.2, ease: "none" }, 0);
+      tl.fromTo("#s1 .particle", { opacity: 0 }, { opacity: function (i, el) { return parseFloat(el.dataset.base); }, duration: 1.6, ease: "power1.inOut", stagger: 0.08 }, 0.4);
+      tl.to("#s1 .particle", { y: function (i, el) { return -parseFloat(el.dataset.drift); }, duration: 6.4, ease: "none" }, 0.4);
+      tl.fromTo("#s1-topbar", { opacity: 0, y: -26 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 0.2);
+      tl.fromTo("#s1-kicker", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }, 0.35);
+      tl.fromTo("#s1-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "expo.out" }, 0.6);
+      tl.fromTo("#s1-title", { opacity: 0, y: 70, filter: "blur(14px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 1.0, ease: "power3.out" }, 1.7);
+      // pain rows synced to VO words: الحجوزات 2.96 / الضيوف 3.86 / التنظيف 4.54 / الصيانة 5.44
+      tl.fromTo("#pain1", { opacity: 0, x: -46 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 3.0);
+      tl.fromTo("#pain2", { opacity: 0, x: -46 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 3.9);
+      tl.fromTo("#pain3", { opacity: 0, x: -46 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 4.6);
+      tl.fromTo("#pain4", { opacity: 0, x: -46 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 5.5);
+      tl.fromTo("#pain1 .x, #pain2 .x, #pain3 .x, #pain4 .x", { scale: 0 }, { scale: 1, duration: 0.35, ease: "back.out(2)", stagger: 0.9 }, 3.05);
+
+      /* ---- T1: light leak S1 -> S2 (6.7) ---- */
+      tl.to("#leak-warm", { opacity: 0.45, duration: 0.3, ease: "power1.in" }, 6.7);
+      tl.to("#leak-1", { opacity: 0.9, x: -300, duration: 0.5, ease: "sine.inOut" }, 6.75);
+      tl.to("#leak-2", { opacity: 0.8, x: -200, duration: 0.6, ease: "sine.inOut" }, 6.8);
+      tl.to("#leak-warm", { opacity: 0.65, duration: 0.15, ease: "power2.in" }, 7.0);
+      tl.set("#s1", { opacity: 0 }, 7.1);
+      tl.set("#s2", { opacity: 1 }, 7.1);
+      tl.to("#leak-warm", { opacity: 0, duration: 0.4, ease: "power2.out", overwrite: "auto" }, 7.15);
+      tl.to("#leak-1", { opacity: 0, x: -600, duration: 0.35, ease: "power1.out", overwrite: "auto" }, 7.15);
+      tl.to("#leak-2", { opacity: 0, x: -500, duration: 0.4, ease: "power1.out", overwrite: "auto" }, 7.2);
+
+      /* ============ SCENE 2 : brand (7.1 - 8.9) — VO "خلا على رفان" 6.9-8.48 ============ */
+      tl.fromTo("#s2-bg img", { scale: 1.1, x: 0 }, { scale: 1.16, x: -20, duration: 2.6, ease: "none" }, 7.1);
+      tl.fromTo("#s2 .particle", { opacity: 0 }, { opacity: function (i, el) { return parseFloat(el.dataset.base); }, duration: 1.4, ease: "power1.inOut", stagger: 0.07 }, 7.3);
+      tl.to("#s2 .particle", { y: function (i, el) { return -parseFloat(el.dataset.drift); }, duration: 2.0, ease: "none" }, 7.3);
+      tl.fromTo("#s2-topbar", { opacity: 0, y: -26 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 7.25);
+      tl.fromTo("#brand-frame", { opacity: 0, scale: 0.88, y: 40 }, { opacity: 1, scale: 1, y: 0, duration: 0.9, ease: "expo.out" }, 7.3);
+      tl.fromTo("#brand-logo", { scale: 0.92 }, { scale: 1.03, duration: 2.0, ease: "none" }, 7.3);
+      tl.fromTo("#s2-tagline", { opacity: 0, y: 36 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 7.7);
+
+      /* ---- T2: blur crossfade S2 -> S3 (8.85) — VO pause 8.48-9.24 ---- */
+      tl.to("#s2", { filter: "blur(25px)", scale: 1.05, duration: 0.5, ease: "power1.in" }, 8.85);
+      tl.to("#s2", { opacity: 0, duration: 0.3, ease: "power1.in" }, 9.15);
+      tl.fromTo("#s3", { filter: "blur(25px)", scale: 0.95, opacity: 0 }, { filter: "blur(25px)", scale: 0.95, opacity: 1, duration: 0.25, ease: "power1.inOut" }, 9.2);
+      tl.to("#s3", { filter: "blur(0px)", scale: 1, duration: 0.55, ease: "power1.out", overwrite: "auto" }, 9.35);
+
+      /* ============ SCENE 3 : platforms (9.2 - 17.5) — VO 9.24-17.22 ============ */
+      tl.fromTo("#s3-bg img", { scale: 1.14, y: -20 }, { scale: 1.24, y: -70, duration: 8.6, ease: "none" }, 9.2);
+      tl.fromTo("#s3-topbar", { opacity: 0, y: -26 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 9.4);
+      tl.fromTo("#s3-header", { opacity: 0, y: 50, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.8, ease: "power3.out" }, 9.45);
+      tl.fromTo("#s3-sub", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }, 12.5);
+      // platforms synced to VO words: أيربنب 13.5 / بوكينق 15.1 / جاذرن 16.1
+      tl.fromTo("#plat1", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.55, ease: "back.out(1.2)" }, 13.5);
+      tl.fromTo("#plat2", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.55, ease: "back.out(1.2)" }, 15.1);
+      tl.fromTo("#plat3", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.55, ease: "back.out(1.2)" }, 16.1);
+      tl.fromTo("#plat1 .dot, #plat2 .dot, #plat3 .dot", { scale: 0 }, { scale: 1, duration: 0.35, ease: "back.out(2)", stagger: 1.6 }, 13.55);
+
+      /* ---- T3: blur S3 -> S4 (17.45) — VO pause 17.22-17.95 ---- */
+      tl.to("#s3", { filter: "blur(30px)", duration: 0.6, ease: "power1.in" }, 17.45);
+      tl.to("#s3", { opacity: 0, duration: 0.35, ease: "power1.in" }, 17.95);
+      tl.fromTo("#s4", { opacity: 0, filter: "blur(20px)" }, { opacity: 1, filter: "blur(20px)", duration: 0.25, ease: "power1.inOut" }, 18.0);
+      tl.to("#s4", { filter: "blur(0px)", duration: 0.55, ease: "power1.out" }, 18.25);
+
+      /* ============ SCENE 4 : services (18.0 - 26.2) — VO 17.95-25.94 ============ */
+      tl.fromTo("#s4-bg img", { scale: 1.12, x: 20 }, { scale: 1.22, x: -40, duration: 8.6, ease: "none" }, 18.0);
+      tl.fromTo("#s4-topbar", { opacity: 0, y: -26 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 18.15);
+      // rows synced to VO beats: خدمة ضيوف 17.95 / تنظيف 20.62 / صيانة 22.36
+      tl.fromTo("#row1", { opacity: 0, y: 46, filter: "blur(8px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.6, ease: "power3.out" }, 18.2);
+      tl.fromTo("#row1 .s4-line", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "expo.out" }, 18.4);
+      tl.fromTo("#row2", { opacity: 0, y: 46, filter: "blur(8px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.6, ease: "power3.out" }, 20.7);
+      tl.fromTo("#row2 .s4-line", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "expo.out" }, 20.9);
+      tl.fromTo("#row3", { opacity: 0, y: 46, filter: "blur(8px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.6, ease: "power3.out" }, 22.45);
+      tl.fromTo("#row3 .s4-line", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "expo.out" }, 22.65);
+
+      /* ---- T4: light leak S4 -> S5 (26.2) — VO pause 25.94-26.66 ---- */
+      tl.to("#leak-warm", { opacity: 0.45, duration: 0.3, ease: "power1.in" }, 26.2);
+      tl.to("#leak-1", { opacity: 0.9, x: 300, duration: 0.5, ease: "sine.inOut" }, 26.25);
+      tl.to("#leak-2", { opacity: 0.8, x: 200, duration: 0.6, ease: "sine.inOut" }, 26.3);
+      tl.to("#leak-warm", { opacity: 0.65, duration: 0.15, ease: "power2.in" }, 26.5);
+      tl.set("#s4", { opacity: 0 }, 26.6);
+      tl.set("#s5", { opacity: 1 }, 26.6);
+      tl.to("#leak-warm", { opacity: 0, duration: 0.4, ease: "power2.out", overwrite: "auto" }, 26.65);
+      tl.to("#leak-1", { opacity: 0, x: 600, duration: 0.35, ease: "power1.out", overwrite: "auto" }, 26.65);
+      tl.to("#leak-2", { opacity: 0, x: 500, duration: 0.4, ease: "power1.out", overwrite: "auto" }, 26.7);
+
+      /* ============ SCENE 5 : reports (26.6 - 33.6) — VO 26.66-33.9 ============ */
+      tl.fromTo("#s5-bg img", { scale: 1.14, y: 0 }, { scale: 1.24, y: -50, duration: 7.4, ease: "none" }, 26.6);
+      tl.fromTo("#s5-topbar", { opacity: 0, y: -26 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 26.75);
+      tl.fromTo("#s5-title", { opacity: 0, y: 60, filter: "blur(12px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.85, ease: "power3.out" }, 26.85);
+      // stats synced to VO words: الإشغال 30.34 / الإيرادات 31.22 / التقييمات 32.06
+      tl.fromTo("#stat1", { opacity: 0, y: 50, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: "back.out(1.3)" }, 30.4);
+      tl.fromTo("#stat2", { opacity: 0, y: 50, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: "back.out(1.3)" }, 31.3);
+      tl.fromTo("#stat3", { opacity: 0, y: 50, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: "back.out(1.3)" }, 32.1);
+      tl.fromTo(".s5-stat .bar", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "expo.out", stagger: 0.9 }, 30.5);
+      // "وأنت مرتاح" 32.86
+      tl.fromTo("#s5-badge", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(1.6)" }, 32.9);
+
+      /* ---- T5: quick blur S5 -> S6 (33.55) — continuous VO ---- */
+      tl.to("#s5", { filter: "blur(24px)", duration: 0.4, ease: "power1.in" }, 33.55);
+      tl.to("#s5", { opacity: 0, duration: 0.25, ease: "power1.in" }, 33.85);
+      tl.fromTo("#s6", { opacity: 0, filter: "blur(18px)", scale: 0.97 }, { opacity: 1, filter: "blur(18px)", scale: 0.97, duration: 0.2, ease: "power1.inOut" }, 33.9);
+      tl.to("#s6", { filter: "blur(0px)", scale: 1, duration: 0.45, ease: "power1.out" }, 34.1);
+
+      /* ============ SCENE 6 : trust (33.9 - 39.1) — VO 33.9-39.04 ============ */
+      tl.fromTo("#s6-bg img", { scale: 1.12, x: 0 }, { scale: 1.2, x: -30, duration: 5.6, ease: "none" }, 33.9);
+      tl.fromTo("#s6-topbar", { opacity: 0, y: -26 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 34.05);
+      tl.fromTo("#s6-title", { opacity: 0, y: 60, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.7, ease: "power3.out" }, 34.0);
+      tl.fromTo("#s6-big", { opacity: 0, scale: 0.82 }, { opacity: 1, scale: 1, duration: 0.7, ease: "back.out(1.35)" }, 34.9);
+      tl.fromTo("#s6-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "expo.out" }, 35.3);
+      // feats synced: العقد مرن 35.44 / ما فيه رسوم 36.54
+      tl.fromTo("#feat1", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 35.5);
+      tl.fromTo("#feat1 .s6-dot", { scale: 0 }, { scale: 1, duration: 0.4, ease: "back.out(2)" }, 35.55);
+      tl.fromTo("#feat2", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 36.6);
+      tl.fromTo("#feat2 .s6-dot", { scale: 0 }, { scale: 1, duration: 0.4, ease: "back.out(2)" }, 36.65);
+
+      /* ---- T6: blur S6 -> S7 (39.05) — VO pause 39.04-39.58 ---- */
+      tl.to("#s6", { filter: "blur(28px)", duration: 0.5, ease: "power1.in" }, 39.05);
+      tl.to("#s6", { opacity: 0, duration: 0.3, ease: "power1.in" }, 39.35);
+      tl.fromTo("#s7", { opacity: 0, filter: "blur(18px)", scale: 0.96 }, { opacity: 1, filter: "blur(18px)", scale: 0.96, duration: 0.25, ease: "power1.inOut" }, 39.4);
+      tl.to("#s7", { filter: "blur(0px)", scale: 1, duration: 0.5, ease: "power1.out" }, 39.65);
+
+      /* ============ SCENE 7 : transformation (39.4 - 46.4) — VO 39.58-46.74 ============ */
+      tl.fromTo("#s7-bg img", { scale: 1.16, y: -30 }, { scale: 1.26, y: -80, duration: 7.4, ease: "none" }, 39.4);
+      tl.fromTo("#s7-topbar", { opacity: 0, y: -26 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 39.55);
+      // city 39.58 / عبء 43.94 / استثمار 44.74
+      tl.fromTo("#s7-city", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 39.7);
+      tl.fromTo("#s7-from", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 43.9);
+      tl.fromTo("#s7-strike", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, 44.3);
+      tl.fromTo("#s7-arrow", { opacity: 0, y: -24 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 44.4);
+      tl.fromTo("#s7-to", { opacity: 0, y: 56, filter: "blur(12px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.8, ease: "power3.out" }, 44.7);
+
+      /* ---- T7: light leak S7 -> S8 (46.35) ---- */
+      tl.to("#leak-warm", { opacity: 0.45, duration: 0.3, ease: "power1.in" }, 46.35);
+      tl.to("#leak-1", { opacity: 0.9, x: -300, duration: 0.5, ease: "sine.inOut" }, 46.4);
+      tl.to("#leak-2", { opacity: 0.8, x: -200, duration: 0.6, ease: "sine.inOut" }, 46.45);
+      tl.to("#leak-warm", { opacity: 0.65, duration: 0.15, ease: "power2.in" }, 46.65);
+      tl.set("#s7", { opacity: 0 }, 46.75);
+      tl.set("#s8", { opacity: 1 }, 46.75);
+      tl.to("#leak-warm", { opacity: 0, duration: 0.4, ease: "power2.out", overwrite: "auto" }, 46.8);
+      tl.to("#leak-1", { opacity: 0, x: -600, duration: 0.35, ease: "power1.out", overwrite: "auto" }, 46.8);
+      tl.to("#leak-2", { opacity: 0, x: -500, duration: 0.4, ease: "power1.out", overwrite: "auto" }, 46.85);
+
+      /* ============ SCENE 8 : end card (46.75 - 55) — VO "رفان إدارة وحدات بمعايير فندقية" 46.74-50.3 ============ */
+      tl.fromTo("#s8-bg img", { scale: 1.12, y: 0 }, { scale: 1.2, y: -30, duration: 8.0, ease: "none" }, 46.75);
+      tl.fromTo("#s8 .particle", { opacity: 0 }, { opacity: function (i, el) { return parseFloat(el.dataset.base); }, duration: 1.6, ease: "power1.inOut", stagger: 0.06 }, 46.95);
+      tl.to("#s8 .particle", { y: function (i, el) { return -parseFloat(el.dataset.drift); }, duration: 7.0, ease: "none" }, 46.95);
+      tl.fromTo("#s8-topbar", { opacity: 0, y: -26 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 46.9);
+      tl.fromTo("#s8-logo", { opacity: 0, y: -26, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.65, ease: "power2.out" }, 46.9);
+      tl.fromTo("#s8-label", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.inOut" }, 47.25);
+      tl.fromTo("#s8-head", { opacity: 0, y: 54, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.85, ease: "power3.out" }, 47.45);
+      tl.fromTo("#s8-cta", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.7, ease: "back.out(1.4)" }, 48.9);
+      tl.to("#s8-cta", { scale: 1.03, duration: 0.9, yoyo: true, repeat: 3, ease: "sine.inOut" }, 49.9);
+      tl.fromTo("#s8-social", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power1.inOut" }, 49.5);
+
+      /* ---- end: fade to black (final scene only) ---- */
+      tl.to("#s8 .scene-content", { opacity: 0, y: -26, duration: 0.55, ease: "power1.in" }, 54.15);
+      tl.to("#fade-black", { opacity: 1, duration: 0.55, ease: "power1.inOut" }, 54.3);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

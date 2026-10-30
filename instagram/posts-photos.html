@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>RIFAN — Instagram Posts · Collection II (Photo Series)</title>
+<style>
+  @font-face { font-family:'ElMessiri'; src:url('../ElMessiri-700.ttf'); font-weight:700; }
+  @font-face { font-family:'Tajawal';   src:url('../Tajawal-400.ttf'); font-weight:400; }
+  @font-face { font-family:'Tajawal';   src:url('../Tajawal-700.ttf'); font-weight:700; }
+  @font-face { font-family:'Marcellus'; src:url('../Marcellus-400.ttf'); font-weight:400; }
+
+  :root{
+    --ink:#211d18; --ink-soft:#4a443c; --muted:#877e70;
+    --gold:#b08d4f; --gold-deep:#96763a; --gold-soft:#d9c9a8; --champagne:#e8d49a;
+    --ivory:#fbf9f6; --ivory-deep:#f4f0e9; --sand:#ece6da; --line:#e6dfd2;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  body{ background:#111; font-family:'Tajawal',sans-serif; display:flex; flex-direction:column; align-items:center; gap:60px; padding:60px 0; }
+
+  .post{ width:1080px; height:1080px; position:relative; overflow:hidden; flex:none; direction:rtl; }
+  .dark { background:radial-gradient(120% 90% at 50% 0%, #2b251d 0%, var(--ink) 55%, #171310 100%); color:var(--ivory); }
+  .light{ background:var(--ivory); color:var(--ink); }
+
+  /* grain */
+  .grain{ position:absolute; inset:0; pointer-events:none; z-index:9; opacity:.5; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='0.28'/%3E%3C/svg%3E");
+  }
+  .light .grain{ mix-blend-mode:multiply; opacity:.35; }
+
+  /* inner hairline frame */
+  .frame{ position:absolute; inset:34px; border:1px solid rgba(176,141,79,.55); pointer-events:none; z-index:8; }
+  .frame::before{ content:''; position:absolute; inset:6px; border:1px solid rgba(176,141,79,.22); }
+  .light .frame{ border-color:rgba(150,118,58,.45); }
+  .light .frame::before{ border-color:rgba(150,118,58,.16); }
+  .frame i{ position:absolute; width:9px; height:9px; background:var(--gold); transform:rotate(45deg); }
+  .frame i:nth-child(1){ top:-5px; right:-5px; } .frame i:nth-child(2){ top:-5px; left:-5px; }
+  .frame i:nth-child(3){ bottom:-5px; right:-5px; } .frame i:nth-child(4){ bottom:-5px; left:-5px; }
+
+  .content{ position:absolute; inset:0; z-index:5; display:flex; flex-direction:column; align-items:center; }
+
+  .kicker{ font-family:'Marcellus',serif; letter-spacing:.55em; text-indent:.55em; font-size:21px; color:var(--gold-soft); text-transform:uppercase; direction:ltr; }
+  .light .kicker{ color:var(--gold-deep); }
+
+  .dia{ display:inline-block; width:10px; height:10px; background:var(--gold); transform:rotate(45deg); }
+  .dia.sm{ width:6px; height:6px; background:var(--gold-soft); }
+  .dia.lg{ width:14px; height:14px; }
+
+  .hairline{ display:flex; align-items:center; gap:18px; direction:ltr; }
+  .hairline::before,.hairline::after{ content:''; height:1px; width:130px; background:linear-gradient(90deg, transparent, var(--gold)); }
+  .hairline::after{ background:linear-gradient(90deg, var(--gold), transparent); }
+  .light .hairline::before{ background:linear-gradient(90deg, transparent, rgba(150,118,58,.6)); }
+  .light .hairline::after{ background:linear-gradient(90deg, rgba(150,118,58,.6), transparent); }
+
+  /* ── real photography ── */
+  .photo{ position:absolute; inset:0; z-index:1; }
+  .photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .photo::after{ content:''; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(23,19,16,.62) 0%, rgba(23,19,16,.18) 34%, rgba(23,19,16,.16) 52%, rgba(23,19,16,.88) 100%); }
+  .photo.warm::after{ background:
+    radial-gradient(120% 100% at 50% 100%, rgba(23,19,16,.92) 0%, rgba(23,19,16,.55) 45%, rgba(23,19,16,.30) 100%); }
+
+  /* unified identity footer */
+  .idfoot{ position:absolute; bottom:50px; left:0; right:0; z-index:7; display:flex; align-items:center; justify-content:center; gap:26px; direction:ltr; }
+  .idfoot .ifmark{ width:42px; height:42px; border:1px solid var(--gold); transform:rotate(45deg); display:flex; align-items:center; justify-content:center; flex:none; background:rgba(176,141,79,.07); }
+  .idfoot .ifmark i{ transform:rotate(-45deg); font-family:'Marcellus',serif; font-style:normal; font-size:21px; color:var(--gold-soft); }
+  .light .idfoot .ifmark i{ color:var(--gold-deep); }
+  .idfoot .iftxt{ font-family:'Marcellus',serif; font-size:16px; letter-spacing:.34em; color:rgba(217,201,168,.85); white-space:nowrap; }
+  .light .idfoot .iftxt{ color:var(--muted); }
+  .idfoot .qrbox{ background:var(--ivory); border:1px solid var(--gold); padding:5px; line-height:0; }
+  .idfoot .qrbox img{ width:82px; height:82px; display:block; }
+
+  /* ghost monogram */
+  .ghostR{ position:absolute; z-index:2; font-family:'Marcellus',serif; color:transparent;
+    -webkit-text-stroke:1px rgba(176,141,79,.14); font-size:620px; line-height:1; pointer-events:none; }
+
+  /* ============ 01 · PHOTO HERO ============ */
+  .p1 .content{ justify-content:flex-end; align-items:center; text-align:center; padding:0 120px 150px; }
+  .p1 .kicker{ margin-bottom:34px; }
+  .p1 h1{ font-family:'ElMessiri',serif; font-weight:700; font-size:88px; line-height:1.45; }
+  .p1 h1 em{ font-style:normal; color:var(--champagne); }
+  .p1 .lead{ font-size:30px; color:rgba(251,249,246,.85); margin-top:26px; line-height:1.8; }
+  .p1 .hairline{ margin-top:40px; }
+
+  /* ============ 02 · معايير التجهيز — split panel ============ */
+  .p2 .photo{ inset:0 0 0 442px; }
+  .p2 .photo::after{ background:linear-gradient(270deg, rgba(23,19,16,0) 40%, rgba(33,29,24,.55) 78%, rgba(33,29,24,1) 100%); }
+  .p2 .panel{ position:absolute; top:0; bottom:0; right:0; width:442px; z-index:5;
+    background:linear-gradient(180deg, #2b251d 0%, var(--ink) 60%, #171310 100%);
+    display:flex; flex-direction:column; justify-content:center; padding:0 76px 90px; }
+  .p2 .panel::before{ content:''; position:absolute; top:0; bottom:0; left:-1px; width:1px; background:linear-gradient(180deg, transparent, var(--gold), transparent); }
+  .p2 h1{ font-family:'ElMessiri',serif; font-weight:700; font-size:56px; line-height:1.5; margin:26px 0 14px; }
+  .p2 h1 em{ font-style:normal; color:var(--champagne); }
+  .p2 .sub{ font-size:24px; color:rgba(251,249,246,.62); line-height:1.8; margin-bottom:44px; }
+  .p2 .std{ display:flex; align-items:center; gap:20px; padding:19px 0; border-bottom:1px solid rgba(176,141,79,.18); }
+  .p2 .std:last-child{ border-bottom:none; }
+  .p2 .std i{ width:8px; height:8px; background:var(--gold); transform:rotate(45deg); flex:none; }
+  .p2 .std b{ font-family:'Tajawal',sans-serif; font-weight:700; font-size:26px; color:var(--ivory); }
+  .p2 .std span{ display:block; font-size:19px; color:rgba(251,249,246,.5); margin-top:3px; }
+  .p2 .cap{ position:absolute; top:64px; left:70px; z-index:5; direction:ltr; text-align:left;
+    font-family:'Marcellus',serif; font-size:17px; letter-spacing:.5em; color:rgba(232,212,154,.9);
+    border:1px solid rgba(232,212,154,.45); padding:12px 20px 12px 26px; background:rgba(23,19,16,.35); }
+
+  /* ============ 03 · قبل / مع ريفان — two worlds ============ */
+  .p3 .halft{ position:absolute; top:0; bottom:0; right:0; width:50%; z-index:5;
+    background:linear-gradient(180deg,#2b251d, var(--ink) 65%); display:flex; flex-direction:column; justify-content:center; padding:0 96px 90px; }
+  .p3 .halfb{ position:absolute; top:0; bottom:0; left:0; width:50%; z-index:1; }
+  .p3 .halfb img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .p3 .halfb::after{ content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(23,19,16,.66), rgba(23,19,16,.44) 45%, rgba(23,19,16,.85)); }
+  .p3 .halfb .inner{ position:absolute; inset:0; z-index:5; display:flex; flex-direction:column; justify-content:center; padding:0 96px 90px; }
+  .p3 .divide{ position:absolute; top:0; bottom:0; right:50%; width:1px; z-index:6;
+    background:linear-gradient(180deg, transparent 6%, var(--gold) 50%, transparent 94%); }
+  .p3 .tag{ font-family:'ElMessiri',serif; font-weight:700; font-size:52px; margin-bottom:14px; }
+  .p3 .tagsmall{ font-size:22px; letter-spacing:.06em; margin-bottom:44px; }
+  .p3 .halft .tagsmall{ color:rgba(251,249,246,.45); }
+  .p3 .halfb .tagsmall{ color:rgba(232,212,154,.85); }
+  .p3 .halfb .tag{ color:var(--champagne); }
+  .p3 .row{ display:flex; align-items:flex-start; gap:18px; padding:17px 0; font-size:26px; line-height:1.6; }
+  .p3 .halft .row{ color:rgba(251,249,246,.66); border-bottom:1px solid rgba(176,141,79,.14); }
+  .p3 .halft .row:last-child{ border-bottom:none; }
+  .p3 .halft .row i{ width:8px; height:8px; border:1px solid var(--muted); transform:rotate(45deg); flex:none; margin-top:14px; }
+  .p3 .halfb .row{ color:var(--ivory); font-weight:700; }
+  .p3 .halfb .row i{ width:8px; height:8px; background:var(--gold); transform:rotate(45deg); flex:none; margin-top:14px; }
+  .p3 .frame{ z-index:7; }
+
+  /* ============ 04 · أول ساعة للضيف — photo timeline ============ */
+  .p4 .content{ justify-content:flex-end; align-items:center; text-align:center; padding:0 110px 150px; }
+  .p4 .kicker{ margin-bottom:30px; }
+  .p4 h1{ font-family:'ElMessiri',serif; font-weight:700; font-size:66px; line-height:1.5; }
+  .p4 h1 em{ font-style:normal; color:var(--champagne); }
+  .p4 .tl{ display:flex; align-items:stretch; gap:0; margin-top:54px; width:100%; direction:rtl; }
+  .p4 .step{ flex:1; position:relative; padding:0 14px; }
+  .p4 .step + .step::before{ content:''; position:absolute; right:-1px; top:8px; bottom:8px; width:1px; background:linear-gradient(180deg, transparent, rgba(217,201,168,.4), transparent); }
+  .p4 .step .d{ width:12px; height:12px; background:var(--gold); transform:rotate(45deg); margin:0 auto 22px; }
+  .p4 .step b{ display:block; font-size:27px; font-weight:700; color:var(--ivory); margin-bottom:10px; }
+  .p4 .step span{ display:block; font-size:20px; color:rgba(251,249,246,.6); line-height:1.7; }
+
+  /* ============ 05 · سرعة الرد — dark statement ============ */
+  .p5 .glow{ position:absolute; inset:0; background:radial-gradient(55% 40% at 50% 44%, rgba(176,141,79,.16) 0%, transparent 70%); }
+  .p5 .content{ justify-content:center; align-items:center; text-align:center; padding:0 130px 90px; }
+  .p5 .big{ font-family:'Marcellus',serif; font-size:300px; line-height:1; color:transparent;
+    -webkit-text-stroke:1.5px var(--gold); direction:ltr; margin:26px 0 8px; }
+  .p5 .big b{ color:var(--champagne); -webkit-text-stroke:0; font-weight:400; }
+  .p5 h1{ font-family:'ElMessiri',serif; font-weight:700; font-size:62px; line-height:1.5; }
+  .p5 h1 em{ font-style:normal; color:var(--gold); }
+  .p5 .lead{ font-size:27px; color:rgba(251,249,246,.62); margin-top:24px; line-height:1.85; max-width:680px; }
+  .p5 .hairline{ margin-top:44px; }
+
+  /* ============ 06 · فحص الجاهزية — light checklist ============ */
+  .p6 .content{ padding:118px 118px 150px; align-items:stretch; }
+  .p6 h1{ font-family:'ElMessiri',serif; font-weight:700; font-size:62px; line-height:1.5; text-align:center; margin:24px 0 12px; }
+  .p6 h1 em{ font-style:normal; color:var(--gold-deep); }
+  .p6 .sub{ text-align:center; font-size:25px; color:var(--muted); margin-bottom:56px; }
+  .p6 .grid{ display:grid; grid-template-columns:1fr 1fr; gap:0 70px; }
+  .p6 .item{ display:flex; align-items:center; gap:22px; padding:26px 4px; border-bottom:1px solid var(--line); }
+  .p6 .item:nth-last-child(-n+2){ border-bottom:none; }
+  .p6 .tick{ width:40px; height:40px; border:1px solid rgba(150,118,58,.5); transform:rotate(45deg); flex:none;
+    display:flex; align-items:center; justify-content:center; background:rgba(176,141,79,.06); }
+  .p6 .tick svg{ transform:rotate(-45deg); display:block; }
+  .p6 .item b{ font-size:27px; font-weight:700; }
+  .p6 .item span{ display:block; font-size:19px; color:var(--muted); margin-top:3px; }
+
+  /* ============ 07 · التنظيف — photo + seal ============ */
+  .p7 .content{ justify-content:flex-end; align-items:center; text-align:center; padding:0 130px 150px; }
+  .p7 .seal{ width:118px; height:118px; border:1px solid var(--gold); border-radius:50%;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px;
+    background:rgba(23,19,16,.4); margin-bottom:40px; }
+  .p7 .seal b{ font-family:'Marcellus',serif; font-size:34px; color:var(--champagne); direction:ltr; }
+  .p7 .seal span{ font-size:13px; color:var(--gold-soft); letter-spacing:.28em; text-indent:.28em; }
+  .p7 h1{ font-family:'ElMessiri',serif; font-weight:700; font-size:64px; line-height:1.5; }
+  .p7 h1 em{ font-style:normal; color:var(--champagne); }
+  .p7 .lead{ font-size:26px; color:rgba(251,249,246,.78); margin-top:22px; line-height:1.8; max-width:640px; }
+
+  /* ============ 08 · المنصات — dark grid ============ */
+  .p8 .content{ justify-content:center; padding:0 118px 130px; }
+  .p8 h1{ font-family:'ElMessiri',serif; font-weight:700; font-size:58px; line-height:1.5; text-align:center; margin:24px 0 10px; }
+  .p8 h1 em{ font-style:normal; color:var(--champagne); }
+  .p8 .sub{ text-align:center; font-size:24px; color:rgba(251,249,246,.55); margin-bottom:52px; }
+  .p8 .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; direction:ltr; }
+  .p8 .cell{ border:1px solid rgba(176,141,79,.35); padding:34px 10px 30px; text-align:center; position:relative; background:rgba(176,141,79,.04); }
+  .p8 .cell::before{ content:''; position:absolute; top:5px; left:5px; right:5px; bottom:5px; border:1px solid rgba(176,141,79,.12); }
+  .p8 .cell b{ font-family:'Marcellus',serif; font-weight:400; font-size:31px; letter-spacing:.05em; color:var(--ivory); }
+  .p8 .cell span{ display:block; font-size:16px; color:var(--gold-soft); margin-top:8px; letter-spacing:.22em; }
+  .p8 .note{ text-align:center; margin-top:44px; font-size:23px; color:rgba(251,249,246,.6); }
+  .p8 .note i{ display:inline-block; width:7px; height:7px; background:var(--gold); transform:rotate(45deg); margin-left:12px; vertical-align:middle; }
+
+  /* ============ 09 · تقارير المالك — light ============ */
+  .p9 .ghostR{ right:-90px; bottom:-140px; }
+  .p9 .content{ justify-content:center; align-items:center; text-align:center; padding:0 120px 110px; }
+  .p9 h1{ font-family:'ElMessiri',serif; font-weight:700; font-size:64px; line-height:1.5; }
+  .p9 h1 em{ font-style:normal; color:var(--gold-deep); }
+  .p9 .cols{ display:flex; gap:0; margin-top:64px; width:100%; }
+  .p9 .col{ flex:1; padding:0 30px; position:relative; }
+  .p9 .col + .col::before{ content:''; position:absolute; right:0; top:10px; bottom:10px; width:1px; background:linear-gradient(180deg, transparent, var(--line), transparent); }
+  .p9 .col .d{ width:11px; height:11px; background:var(--gold); transform:rotate(45deg); margin:0 auto 26px; }
+  .p9 .col b{ display:block; font-size:31px; font-weight:700; }
+  .p9 .col span{ display:block; font-size:21px; color:var(--muted); line-height:1.75; margin-top:12px; }
+
+  /* ============ 10 · CTA — photo finale ============ */
+  .p10 .content{ justify-content:center; align-items:center; text-align:center; padding:0 120px 100px; }
+  .p10 .mark{ display:flex; align-items:center; justify-content:center; width:104px; height:104px; border:1px solid var(--gold); transform:rotate(45deg); margin-bottom:56px; background:rgba(23,19,16,.35); }
+  .p10 .mark span{ transform:rotate(-45deg); font-family:'Marcellus',serif; font-size:48px; color:var(--champagne); }
+  .p10 h1{ font-family:'ElMessiri',serif; font-weight:700; font-size:82px; line-height:1.45; }
+  .p10 h1 em{ font-style:normal; color:var(--champagne); }
+  .p10 .lead{ font-size:28px; color:rgba(251,249,246,.82); margin-top:24px; line-height:1.8; }
+  .p10 .free{ margin-top:44px; font-size:24px; color:var(--gold-soft); border:1px solid rgba(217,201,168,.45); padding:14px 36px; background:rgba(23,19,16,.3); }
+  .p10 .contact{ margin-top:56px; display:flex; align-items:center; gap:26px; direction:ltr; font-family:'Marcellus',serif; font-size:23px; letter-spacing:.1em; color:rgba(232,212,154,.95); }
+  .p10 .contact i{ width:7px; height:7px; background:var(--gold); transform:rotate(45deg); }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ 01 · PHOTO HERO — الفرق الذي تصنعه الإدارة ═══════════ -->
+<section class="post dark p1" id="post-1">
+  <div class="photo"><img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1400&auto=format&fit=crop" alt=""></div>
+  <div class="grain"></div><div class="frame"><i></i><i></i><i></i><i></i></div>
+  <div class="content">
+    <div class="kicker">RIFAN LIVING</div>
+    <h1>الفرق الذي تصنعه<br><em>الإدارة الصحيحة</em></h1>
+    <p class="lead">نفس الوحدة… بصورة أجمل، وتقييم أعلى، وإشغال لا ينقطع</p>
+    <div class="hairline"><span class="dia"></span></div>
+  </div>
+  <footer class="idfoot"><span class="ifmark"><i>R</i></span><span class="iftxt">RIFAN&nbsp;·&nbsp;@I0.RIFAN</span><span class="qrbox"><img src="qr.png" alt="QR Instagram"></span></footer>
+</section>
+
+<!-- ═══════════ 02 · معايير التجهيز الفندقي ═══════════ -->
+<section class="post dark p2" id="post-2">
+  <div class="photo"><img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1200&auto=format&fit=crop" alt=""></div>
+  <div class="cap">HOTEL-GRADE STANDARD</div>
+  <div class="grain"></div><div class="frame"><i></i><i></i><i></i><i></i></div>
+  <div class="panel">
+    <div class="kicker" style="font-size:17px;">CHECK-IN READY</div>
+    <h1>تفاصيل صغيرة…<br><em>تُحسب كثيراً</em></h1>
+    <p class="sub">كل وحدة تُسلَّم للضيف بمعايير الفنادق</p>
+    <div class="std"><i></i><div><b>تجهيز سرير فندقي</b><span>مفروشات مكوية ومنسّقة بعناية</span></div></div>
+    <div class="std"><i></i><div><b>مستلزمات ضيافة</b><span>مناشف بيضاء ومنظفات ومستلزمات كاملة</span></div></div>
+    <div class="std"><i></i><div><b>لمسة ترحيب</b><span>رسالة ترحيب ودليل الوحدة بالداخل</span></div></div>
+  </div>
+  <footer class="idfoot" style="right:auto; left:0; width:442px;"><span class="iftxt" style="font-size:14px;">RIFAN&nbsp;·&nbsp;@I0.RIFAN</span></footer>
+</section>
+
+<!-- ═══════════ 03 · قبل / مع ريفان ═══════════ -->
+<section class="post dark p3" id="post-3">
+  <div class="halfb"><img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1200&auto=format&fit=crop" alt=""><div class="inner">
+    <div class="tag">مع ريفان</div>
+    <div class="tagsmall">إدارة وتشغيل كامل</div>
+    <div class="row"><i></i>صور احترافية تُبرز الوحدة</div>
+    <div class="row"><i></i>حجوزات تُدار وتُتابع يومياً</div>
+    <div class="row"><i></i>تنظيف وصيانة دون تدخلك</div>
+    <div class="row"><i></i>تقارير واضحة تصلك بانتظام</div>
+  </div></div>
+  <div class="halft">
+    <div class="tag" style="color:rgba(251,249,246,.85);">قبل أن تُدار</div>
+    <div class="tagsmall">وحدة بلا مشغّل</div>
+    <div class="row"><i></i>صور بسيطة لا تجذب الحجز</div>
+    <div class="row"><i></i>استفسارات بلا رد سريع</div>
+    <div class="row"><i></i>تنظيف وتجهيز على حسابك</div>
+    <div class="row"><i></i>تقييمات متفاوتة تُضعف الوحدة</div>
+  </div>
+  <div class="divide"></div>
+  <div class="grain"></div><div class="frame"><i></i><i></i><i></i><i></i></div>
+  <footer class="idfoot"><span class="ifmark"><i>R</i></span><span class="iftxt">RIFAN&nbsp;·&nbsp;@I0.RIFAN</span><span class="qrbox"><img src="qr.png" alt="QR Instagram"></span></footer>
+</section>
+
+<!-- ═══════════ 04 · أول ساعة للضيف ═══════════ -->
+<section class="post dark p4" id="post-4">
+  <div class="photo warm"><img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=1400&auto=format&fit=crop" alt=""></div>
+  <div class="grain"></div><div class="frame"><i></i><i></i><i></i><i></i></div>
+  <div class="content">
+    <div class="kicker">GUEST JOURNEY</div>
+    <h1>أول ساعة من وصول الضيف<br>نرافقها <em>خطوة بخطوة</em></h1>
+    <div class="tl">
+      <div class="step"><div class="d"></div><b>رسالة الترحيب</b><span>قبل الوصول بتوقيت دقيق</span></div>
+      <div class="step"><div class="d"></div><b>دخول سهل</b><span>تعليمات واضحة ومباشرة</span></div>
+      <div class="step"><div class="d"></div><b>جاهزية تامة</b><span>وحدة نظيفة ومجهّزة بالكامل</span></div>
+      <div class="step"><div class="d"></div><b>دعم مستمر</b><span>على مدار الإقامة لأي طلب</span></div>
+    </div>
+  </div>
+  <footer class="idfoot"><span class="ifmark"><i>R</i></span><span class="iftxt">RIFAN&nbsp;·&nbsp;@I0.RIFAN</span><span class="qrbox"><img src="qr.png" alt="QR Instagram"></span></footer>
+</section>
+
+<!-- ═══════════ 05 · سرعة الرد ═══════════ -->
+<section class="post dark p5" id="post-5">
+  <div class="glow"></div><div class="grain"></div><div class="frame"><i></i><i></i><i></i><i></i></div>
+  <div class="content">
+    <div class="kicker">RESPONSE TIME</div>
+    <div class="big"><b>24</b>/7</div>
+    <h1>الحجز لا ينتظر…<br>ونحن <em>لا نُبقيه ينتظر</em></h1>
+    <p class="lead">كل دقيقة تأخير في الرد قد تعني حجزاً خاسراً — لذلك نتولى الاستفسارات والرسائل والتنسيق مع الضيوف في كل وقت</p>
+    <div class="hairline"><span class="dia"></span></div>
+  </div>
+  <footer class="idfoot"><span class="ifmark"><i>R</i></span><span class="iftxt">RIFAN&nbsp;·&nbsp;@I0.RIFAN</span><span class="qrbox"><img src="qr.png" alt="QR Instagram"></span></footer>
+</section>
+
+<!-- ═══════════ 06 · فحص الجاهزية ═══════════ -->
+<section class="post light p6" id="post-6">
+  <div class="grain"></div><div class="frame"><i></i><i></i><i></i><i></i></div>
+  <div class="content">
+    <div class="kicker">READY CHECK</div>
+    <h1>قبل أن تُدرج وحدتك…<br>نجتاز <em>فحص جاهزية</em> من 6 محاور</h1>
+    <p class="sub">جاهزية الوحدة = إشغال أسرع وتقييمات أعلى</p>
+    <div class="grid">
+      <div class="item"><div class="tick"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M4 12.5l5.5 5.5L20 6.5" stroke="#96763a" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg></div><div><b>المرتب والمفروشات</b><span>راحة النوم أولاً — أول ما يقيّمه الضيف</span></div></div>
+      <div class="item"><div class="tick"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M4 12.5l5.5 5.5L20 6.5" stroke="#96763a" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg></div><div><b>الحمّام</b><span>نظافة لامسة ومناشف كاملة التجهيز</span></div></div>
+      <div class="item"><div class="tick"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M4 12.5l5.5 5.5L20 6.5" stroke="#96763a" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg></div><div><b>المطبخ</b><span>أدوات كاملة وجاهزة للاستخدام</span></div></div>
+      <div class="item"><div class="tick"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M4 12.5l5.5 5.5L20 6.5" stroke="#96763a" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg></div><div><b>الإنترنت والترفيه</b><span>اتصال قوي ومحتوى مسلٍ للعائلة</span></div></div>
+      <div class="item"><div class="tick"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M4 12.5l5.5 5.5L20 6.5" stroke="#96763a" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg></div><div><b>الإضاءة واللمسات</b><span>أجواء دافئة تُصنع بالتفاصيل</span></div></div>
+      <div class="item"><div class="tick"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M4 12.5l5.5 5.5L20 6.5" stroke="#96763a" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg></div><div><b>التصوير الاحترافي</b><span>أول لقاء للضيف مع وحدتك — نورّده بأفضل صورة</span></div></div>
+    </div>
+  </div>
+  <footer class="idfoot"><span class="ifmark"><i>R</i></span><span class="iftxt">RIFAN&nbsp;·&nbsp;@I0.RIFAN</span><span class="qrbox"><img src="qr.png" alt="QR Instagram"></span></footer>
+</section>
+
+<!-- ═══════════ 07 · التنظيف بمعايير فندقية ═══════════ -->
+<section class="post dark p7" id="post-7">
+  <div class="photo"><img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1400&auto=format&fit=crop" alt=""></div>
+  <div class="grain"></div><div class="frame"><i></i><i></i><i></i><i></i></div>
+  <div class="content">
+    <div class="seal"><b>R</b><span>READY</span></div>
+    <h1>بعد كل مغادرة…<br>وقبل كل وصول — <em>جاهزية فندقية</em></h1>
+    <p class="lead">تنظيف شامل، فحص دقيق، وتجهيز كامل — دورة ثابتة لا تتوقف لتبقى وحدتك دائماً جاهزة للتقييم الخمس نجوم</p>
+  </div>
+  <footer class="idfoot"><span class="ifmark"><i>R</i></span><span class="iftxt">RIFAN&nbsp;·&nbsp;@I0.RIFAN</span><span class="qrbox"><img src="qr.png" alt="QR Instagram"></span></footer>
+</section>
+
+<!-- ═══════════ 08 · أين تظهر وحدتك ═══════════ -->
+<section class="post dark p8" id="post-8">
+  <div class="grain"></div><div class="frame"><i></i><i></i><i></i><i></i></div>
+  <div class="content">
+    <div class="kicker">GLOBAL REACH</div>
+    <h1>وحدتك أمام <em>العالم</em></h1>
+    <p class="sub">نُدرج وحدتك ونُدار حضورها على أبرز منصات الحجز</p>
+    <div class="grid">
+      <div class="cell"><b>Airbnb</b><span>STAYS</span></div>
+      <div class="cell"><b>Booking<span style="color:var(--gold-soft)">.com</span></b><span>TRAVEL</span></div>
+      <div class="cell"><b>Expedia</b><span>TRAVEL</span></div>
+      <div class="cell"><b>Trip.com</b><span>TRAVEL</span></div>
+      <div class="cell"><b>Agoda</b><span>STAYS</span></div>
+      <div class="cell"><b>Gathern</b><span>STAYS</span></div>
+    </div>
+    <p class="note"><i></i>مع تحسين مستمر للإعلان والصور والتقييمات لرفع الترتيب</p>
+  </div>
+  <footer class="idfoot"><span class="ifmark"><i>R</i></span><span class="iftxt">RIFAN&nbsp;·&nbsp;@I0.RIFAN</span><span class="qrbox"><img src="qr.png" alt="QR Instagram"></span></footer>
+</section>
+
+<!-- ═══════════ 09 · تقارير المالك ═══════════ -->
+<section class="post light p9" id="post-9">
+  <div class="grain"></div><div class="ghostR">R</div><div class="frame"><i></i><i></i><i></i><i></i></div>
+  <div class="content">
+    <div class="kicker">OWNER REPORT</div>
+    <h1 style="margin-top:26px;">كل شهر… تعرف<br><em>كل شيء</em> عن وحدتك</h1>
+    <div class="cols">
+      <div class="col"><div class="d"></div><b>الإشغال</b><span>ليالٍ محجوزة وفرص يمكن اقتناصها</span></div>
+      <div class="col"><div class="d"></div><b>العوائد</b><span>أرقام واضحة ومفصّلة بلا غموض</span></div>
+      <div class="col"><div class="d"></div><b>التقييمات</b><span>رأي الضيوف الحقيقي عن إقامتهم</span></div>
+    </div>
+  </div>
+  <footer class="idfoot"><span class="ifmark"><i>R</i></span><span class="iftxt">RIFAN&nbsp;·&nbsp;@I0.RIFAN</span><span class="qrbox"><img src="qr.png" alt="QR Instagram"></span></footer>
+</section>
+
+<!-- ═══════════ 10 · CTA — الخاتمة ═══════════ -->
+<section class="post dark p10" id="post-10">
+  <div class="photo warm"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1400&auto=format&fit=crop" alt=""></div>
+  <div class="grain"></div><div class="frame"><i></i><i></i><i></i><i></i></div>
+  <div class="content">
+    <div class="mark"><span>R</span></div>
+    <h1>وحدتك تستحق<br>إدارة <em>تليق بها</em></h1>
+    <p class="lead">أرسل لنا تفاصيل وحدتك… ونتولى الباقي</p>
+    <div class="free">التقييم الأولي مجاني — بلا أي التزام</div>
+    <div class="contact"><span>DM @I0.RIFAN</span><i></i><span>b.rifan.mk@gmail.com</span></div>
+  </div>
+  <footer class="idfoot"><span class="ifmark"><i>R</i></span><span class="iftxt">RIFAN&nbsp;·&nbsp;@I0.RIFAN</span><span class="qrbox"><img src="qr.png" alt="QR Instagram"></span></footer>
+</section>
+
+</body>
+</html>

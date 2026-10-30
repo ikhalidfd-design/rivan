@@ -1,0 +1,325 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - navigation [ref=e5]:
+      - link "شعار رِفان رِفان RIFAN" [ref=e6] [cursor=pointer]:
+        - /url: "#home"
+        - img "شعار رِفان" [ref=e7]
+        - generic [ref=e8]:
+          - generic [ref=e9]: رِفان
+          - generic [ref=e10]: RIFAN
+      - list [ref=e11]:
+        - listitem [ref=e12]:
+          - link "الرئيسية" [ref=e13] [cursor=pointer]:
+            - /url: "#home"
+        - listitem [ref=e14]:
+          - link "من نحن" [ref=e15] [cursor=pointer]:
+            - /url: "#about"
+        - listitem [ref=e16]:
+          - link "خدماتنا" [ref=e17] [cursor=pointer]:
+            - /url: "#services"
+        - listitem [ref=e18]:
+          - link "آلية العمل" [ref=e19] [cursor=pointer]:
+            - /url: "#how"
+        - listitem [ref=e20]:
+          - link "لماذا رِفان" [ref=e21] [cursor=pointer]:
+            - /url: "#why"
+        - listitem [ref=e22]:
+          - link "تواصل معنا" [ref=e23] [cursor=pointer]:
+            - /url: "#contact"
+      - link "تحدث معنا" [ref=e25] [cursor=pointer]:
+        - /url: "#contact"
+  - main [ref=e26]:
+    - generic [ref=e27]:
+      - img "وحدة سكنية فاخرة بإدارة رِفان" [ref=e29]
+      - generic [ref=e33]:
+        - generic [ref=e34]: Luxury Hospitality · Property Management
+        - heading "نُدير وحدتك... ونصنع تجربة تستحق التكرار." [level=1] [ref=e37]:
+          - generic [ref=e38]: نُدير وحدتك...
+          - generic [ref=e39]: ونصنع تجربة تستحق التكرار.
+        - paragraph [ref=e40]: رِفان لإدارة وتشغيل الوحدات السكنية للإيجار قصير المدى، نقدم إدارة احترافية متكاملة تبدأ من التشغيل وتنتهي بتجربة ضيف استثنائية.
+        - generic [ref=e41]:
+          - link "تعرّف على خدماتنا" [ref=e42] [cursor=pointer]:
+            - /url: "#services"
+          - link "تواصل معنا" [ref=e44] [cursor=pointer]:
+            - /url: "#contact"
+      - link "مرر للأسفل" [ref=e45] [cursor=pointer]:
+        - /url: "#about"
+    - generic [ref=e50]:
+      - generic [ref=e51]:
+        - generic [ref=e52]:
+          - generic [ref=e53]: About RIFAN
+          - heading "رِفان... أكثر من إدارة وحدة" [level=2] [ref=e58]
+        - paragraph [ref=e60]: في رِفان، نؤمن أن نجاح الوحدة السكنية لا يعتمد على عرضها فقط، بل على جودة إدارتها اليومية والتفاصيل التي تصنع تجربة الضيف.
+        - paragraph [ref=e62]: نتولى إدارة وتشغيل الوحدة باحترافية، من إدارة الحجوزات وخدمة الضيوف إلى التنسيق مع فرق التنظيف والصيانة، ومتابعة الأداء والتقييمات.
+        - generic [ref=e63]: Professional Short-Term Rental Management
+      - generic [ref=e69]:
+        - img "إدارة رِفان لوحدة سكنية عصرية" [ref=e72]
+        - img "غرفة نوم فاخرة بإدارة رِفان" [ref=e74]
+        - generic [ref=e75]: RIFAN
+    - generic [ref=e77]:
+      - generic [ref=e78]:
+        - generic [ref=e79]: The RIFAN Film
+        - heading "التفاصيل التي لا تراها… نحن نديرها." [level=2] [ref=e84]
+      - paragraph [ref=e86]: من التشغيل اليومي إلى تجربة الضيف، تتولى رِفان التفاصيل التي تصنع الفرق.
+      - figure "الإعلان التعريفي لرِفان" [ref=e502]:
+        - generic [ref=e503]:
+          - img "وحدة سكنية فاخرة في الرياض بإضاءة صباحية" [ref=e506]
+          - img "تفاصيل التصميم الداخلي العصري للوحدة" [ref=e509]
+          - generic [ref=e511]:
+            - generic [ref=e512]: الرياض · صباحًا
+            - heading "وحدتك تستحق أكثر من مجرد إعلان." [level=3] [ref=e513]: وحدتك تستحقأكثر من مجرد إعلان.
+        - button "إيقاف مؤقت" [ref=e514] [cursor=pointer]
+        - generic:
+          - paragraph: كل وحدة لها قيمة… لكن إدارتها هي اللي تصنع الفرق.
+        - generic [ref=e515]:
+          - button "إيقاف مؤقت" [ref=e516]
+          - button "كتم الصوت" [ref=e520]
+          - slider "تقدم الفيديو" [ref=e525] [cursor=pointer]
+          - generic [ref=e527]: 0:06
+          - generic [ref=e528]: 1:22
+          - button "إنهاء ملء الشاشة" [active] [ref=e529]
+      - link "تعرّف على خدماتنا" [ref=e90] [cursor=pointer]:
+        - /url: "#services"
+    - generic [ref=e93]:
+      - generic [ref=e94]:
+        - generic [ref=e95]:
+          - generic [ref=e96]: Our Services
+          - heading "خدماتنا" [level=2] [ref=e101]
+        - paragraph [ref=e103]: إدارة متكاملة تغطي كل ما تحتاجه وحدتك — من أول حجز حتى آخر تقييم.
+      - generic [ref=e104]:
+        - article [ref=e106]:
+          - generic [ref=e107]: "01"
+          - heading "إدارة الحجوزات" [level=3] [ref=e113]
+          - paragraph [ref=e114]: متابعة الحجوزات وتنظيمها وإدارة تفاصيل الإقامة.
+        - article [ref=e116]:
+          - generic [ref=e117]: "02"
+          - heading "خدمة الضيوف" [level=3] [ref=e123]
+          - paragraph [ref=e124]: التواصل مع الضيوف ومتابعة احتياجاتهم قبل وأثناء وبعد الإقامة.
+        - article [ref=e126]:
+          - generic [ref=e127]: "03"
+          - heading "التشغيل اليومي" [level=3] [ref=e133]
+          - paragraph [ref=e134]: إدارة التفاصيل التشغيلية للوحدة ومتابعة سير العمل.
+        - article [ref=e136]:
+          - generic [ref=e137]: "04"
+          - heading "التنظيف والتجهيز" [level=3] [ref=e142]
+          - paragraph [ref=e143]: تنسيق أعمال التنظيف وتجهيز الوحدة بما يضمن جاهزيتها للضيف.
+        - article [ref=e145]:
+          - generic [ref=e146]: "05"
+          - heading "الصيانة والمتابعة" [level=3] [ref=e151]
+          - paragraph [ref=e152]: متابعة احتياجات الصيانة والتنسيق لمعالجة الملاحظات والمشكلات.
+        - article [ref=e154]:
+          - generic [ref=e155]: "06"
+          - heading "إدارة المنصات" [level=3] [ref=e163]
+          - paragraph [ref=e164]: إدارة حسابات ومنصات الإيجار قصير المدى وتحسين ظهور الوحدة.
+        - article [ref=e166]:
+          - generic [ref=e167]: "07"
+          - heading "إدارة التقييمات" [level=3] [ref=e172]
+          - paragraph [ref=e173]: متابعة تقييمات الضيوف وتحسين تجربة الإقامة وبناء سمعة أفضل للوحدة.
+        - article [ref=e175]:
+          - generic [ref=e176]: "08"
+          - heading "متابعة الأداء" [level=3] [ref=e182]
+          - paragraph [ref=e183]: متابعة مؤشرات الأداء والإشغال والإيرادات وتقديم رؤية واضحة للمالك.
+    - generic [ref=e185]:
+      - generic [ref=e186]:
+        - generic [ref=e187]: How We Work
+        - heading "كيف نعمل؟" [level=2] [ref=e192]
+      - generic [ref=e195]:
+        - generic [ref=e198]:
+          - text: "01"
+          - heading "نتعرف على وحدتك" [level=3] [ref=e199]
+        - generic [ref=e202]:
+          - text: "02"
+          - heading "نجهز خطة التشغيل" [level=3] [ref=e203]
+        - generic [ref=e206]:
+          - text: "03"
+          - heading "نبدأ الإدارة والتشغيل" [level=3] [ref=e207]
+        - generic [ref=e210]:
+          - text: "04"
+          - heading "نتابع الضيوف والحجوزات" [level=3] [ref=e211]
+        - generic [ref=e214]:
+          - text: "05"
+          - heading "نراقب الأداء والتقييمات" [level=3] [ref=e215]
+        - generic [ref=e218]:
+          - text: "06"
+          - heading "نرفع مستوى التجربة باستمرار" [level=3] [ref=e219]
+    - generic [ref=e220]:
+      - generic [aria-hidden]: RIFAN
+      - generic [ref=e221]:
+        - generic [ref=e222]:
+          - generic [ref=e223]: Why RIFAN
+          - heading "لماذا رِفان؟" [level=2] [ref=e228]
+        - generic [ref=e229]:
+          - article [ref=e231]:
+            - generic [ref=e233]:
+              - heading "إدارة متكاملة" [level=3] [ref=e238]
+              - paragraph [ref=e239]: لا نترك المالك أمام تفاصيل التشغيل اليومية.
+          - article [ref=e241]:
+            - generic [ref=e243]:
+              - heading "تجربة ضيافة احترافية" [level=3] [ref=e247]
+              - paragraph [ref=e248]: نهتم بالتفاصيل التي تصنع الفرق في تجربة الضيف.
+          - article [ref=e250]:
+            - generic [ref=e252]:
+              - heading "متابعة مستمرة" [level=3] [ref=e256]
+              - paragraph [ref=e257]: نراقب التشغيل والحجوزات والتقييمات والأداء.
+          - article [ref=e259]:
+            - generic [ref=e261]:
+              - heading "حل واحد للمالك" [level=3] [ref=e267]
+              - paragraph [ref=e268]: من الحجوزات إلى التنظيف والصيانة وخدمة الضيوف.
+          - article [ref=e270]:
+            - generic [ref=e272]:
+              - heading "شفافية في الأداء" [level=3] [ref=e276]
+              - paragraph [ref=e277]: المالك على اطلاع واضح على أداء وحدته.
+          - article [ref=e279]:
+            - generic [ref=e281]:
+              - heading "خبرة تشغيلية" [level=3] [ref=e285]
+              - paragraph [ref=e286]: نعتمد على خبرة عملية وفريق متخصص في تشغيل الوحدات.
+        - generic [ref=e288]:
+          - figure [ref=e289]:
+            - img "صالة معيشة أنيقة بإدارة رِفان" [ref=e290]
+          - figure [ref=e291]:
+            - img "غرفة نوم مريحة بإدارة رِفان" [ref=e292]
+    - generic [ref=e293]:
+      - img "وحدة سكنية فاخرة بإدارة رِفان" [ref=e295]
+      - generic [ref=e299]:
+        - generic [ref=e300]: The RIFAN Standard
+        - heading "وحدتك تستحق إدارة مختلفة" [level=2] [ref=e306]: وحدتك تستحقإدارة مختلفة
+        - paragraph [ref=e308]: نعتني بكل تفصيل، لأن التفاصيل الصغيرة هي التي تصنع تجربة كبيرة.
+    - generic [ref=e310]:
+      - generic [ref=e311]:
+        - generic [ref=e312]: Owner Experience
+        - heading "أنت تملك الوحدة... ونحن نتولى تشغيلها." [level=2] [ref=e317]
+      - generic [ref=e320]:
+        - generic [ref=e322]:
+          - generic [ref=e323]:
+            - text: YOU
+            - heading "تملك الوحدة" [level=3] [ref=e324]
+          - generic [ref=e325]: أنت
+        - generic [ref=e327]:
+          - generic [ref=e328]:
+            - text: RIFAN
+            - heading "تتولى الإدارة والتشغيل" [level=3] [ref=e329]
+          - generic [ref=e330]: رِفان
+        - generic [ref=e332]:
+          - generic [ref=e333]:
+            - text: GUEST
+            - heading "يحصل على تجربة متكاملة" [level=3] [ref=e334]
+          - generic [ref=e335]: الضيف
+        - generic [ref=e337]:
+          - generic [ref=e338]:
+            - text: YOU
+            - heading "تتابع أداء وحدتك بوضوح" [level=3] [ref=e339]
+          - generic [ref=e340]: أنت
+    - generic [ref=e342]:
+      - generic [ref=e343]:
+        - paragraph [ref=e344]: Where Guests Find You
+        - paragraph [ref=e345]: نطلق وحدتك وندير حضورها على أبرز منصات الحجز العالمية والمحلية
+      - list [ref=e347]:
+        - listitem [ref=e348]: AIRBNB
+        - listitem [ref=e349]: BOOKING.COM
+        - listitem [ref=e350]: GATHERN
+        - listitem [ref=e351]: EXPEDIA
+        - listitem [ref=e352]: TRIP.COM
+    - generic [ref=e354]:
+      - generic [ref=e355]:
+        - generic [ref=e356]: FAQ
+        - heading "الأسئلة الشائعة" [level=2] [ref=e361]
+      - generic [ref=e362]:
+        - generic [ref=e364]:
+          - button "كيف تبدأ رِفان بإدارة وحدتي؟" [expanded] [ref=e365]
+          - paragraph [ref=e372]: نبدأ بزيارة الوحدة وتقييمها، ثم نجهّز خطة التشغيل المناسبة لها — من التجهيز والتصوير إلى الإطلاق على منصات الحجز — ونبدأ الإدارة والتشغيل الفعلي.
+        - button "ما المدن التي تعمل بها رِفان حاليًا؟" [ref=e375]
+        - button "هل تبقى الوحدة مسجلة باسمي؟" [ref=e381]
+        - button "كيف أتابع أداء وحدتي؟" [ref=e387]
+        - button "هل توجد رسوم قبل بدء التشغيل؟" [ref=e393]
+        - button "هل يمكنني إيقاف التعاون في أي وقت؟" [ref=e399]
+    - generic [ref=e403]:
+      - generic [aria-hidden]: RIFAN
+      - generic [ref=e404]:
+        - generic [ref=e405]: Let's Talk
+        - heading "هل لديك وحدة وتبحث عن إدارة احترافية؟" [level=2] [ref=e407]: هل لديك وحدة وتبحثعن إدارة احترافية؟
+        - paragraph [ref=e409]: دع رِفان تتولى التفاصيل، وامنح وحدتك إدارة تليق بها.
+        - link "ابدأ التواصل مع رِفان" [ref=e411] [cursor=pointer]:
+          - /url: "#contact"
+    - generic [ref=e414]:
+      - generic [ref=e415]:
+        - generic [ref=e416]:
+          - generic [ref=e417]: Contact Us
+          - heading "تواصل معنا" [level=2] [ref=e422]
+        - paragraph [ref=e424]: يسعدنا التعرف على وحدتك ومناقشة أفضل طريقة لإدارتها وتشغيلها.
+        - link "البريد الإلكتروني b.rifan.mk@gmail.com" [ref=e426] [cursor=pointer]:
+          - /url: mailto:b.rifan.mk@gmail.com
+          - generic [ref=e431]:
+            - generic [ref=e432]: البريد الإلكتروني
+            - text: b.rifan.mk@gmail.com
+        - generic [ref=e433]:
+          - link "I0.rifan Instagram" [ref=e435] [cursor=pointer]:
+            - /url: https://instagram.com/I0.rifan
+            - generic [ref=e440]: I0.rifan
+            - generic [ref=e441]: Instagram
+          - link "I0.rifan TikTok" [ref=e443] [cursor=pointer]:
+            - /url: https://tiktok.com/@I0.rifan
+            - generic [ref=e447]: I0.rifan
+            - generic [ref=e448]: TikTok
+      - generic [ref=e452]:
+        - generic [ref=e453]:
+          - generic [ref=e454]: الاسم
+          - textbox "الاسم" [ref=e455]:
+            - /placeholder: اسمك الكريم
+        - generic [ref=e456]:
+          - generic [ref=e457]: رقم الجوال
+          - textbox "رقم الجوال" [ref=e458]:
+            - /placeholder: 05xxxxxxxx
+        - generic [ref=e459]:
+          - generic [ref=e460]: البريد الإلكتروني
+          - textbox "البريد الإلكتروني" [ref=e461]:
+            - /placeholder: name@email.com
+        - generic [ref=e462]:
+          - generic [ref=e463]: المدينة
+          - combobox "المدينة" [ref=e464] [cursor=pointer]:
+            - option "اختر المدينة" [disabled] [selected]
+            - option "الرياض"
+            - option "المنطقة الشرقية"
+            - option "أخرى"
+        - generic [ref=e465]:
+          - generic [ref=e466]: عدد الوحدات
+          - combobox "عدد الوحدات" [ref=e467] [cursor=pointer]:
+            - option "اختر عدد الوحدات" [disabled] [selected]
+            - option "وحدة واحدة"
+            - option "2 – 5 وحدات"
+            - option "6 – 10 وحدات"
+            - option "أكثر من 10 وحدات"
+        - generic [ref=e468]:
+          - generic [ref=e469]: رسالتك
+          - textbox "رسالتك" [ref=e470]:
+            - /placeholder: أخبرنا عن وحدتك وما تحتاجه...
+        - button "إرسال الطلب" [ref=e472]
+  - contentinfo [ref=e478]:
+    - generic [ref=e479]:
+      - generic [ref=e480]:
+        - generic [ref=e481]:
+          - img "شعار رِفان" [ref=e482]
+          - generic [ref=e483]:
+            - paragraph [ref=e484]: رِفان
+            - paragraph [ref=e485]: RIFAN
+        - paragraph [ref=e486]: Luxury Hospitality+ Professional Property Management
+        - navigation "روابط التذييل" [ref=e487]:
+          - list [ref=e488]:
+            - listitem [ref=e489]:
+              - link "الرئيسية" [ref=e490] [cursor=pointer]:
+                - /url: "#home"
+            - listitem [ref=e491]:
+              - link "من نحن" [ref=e492] [cursor=pointer]:
+                - /url: "#about"
+            - listitem [ref=e493]:
+              - link "خدماتنا" [ref=e494] [cursor=pointer]:
+                - /url: "#services"
+            - listitem [ref=e495]:
+              - link "آلية العمل" [ref=e496] [cursor=pointer]:
+                - /url: "#how"
+            - listitem [ref=e497]:
+              - link "تواصل معنا" [ref=e498] [cursor=pointer]:
+                - /url: "#contact"
+      - generic [ref=e499]:
+        - paragraph [ref=e500]: © 2026 RIFAN. All Rights Reserved.
+        - paragraph [ref=e501]: إدارة وتشغيل احترافي للوحدات السكنية للإيجار قصير المدى
+  - button "العودة للأعلى" [ref=e535]

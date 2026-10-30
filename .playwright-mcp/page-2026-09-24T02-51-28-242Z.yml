@@ -1,0 +1,211 @@
+- generic [ref=f3e3]:
+  - status [ref=f3e4]: Registrars
+  - generic [ref=f3e5]:
+    - banner [ref=f3e6]:
+      - generic [ref=f3e10]:
+        - list [ref=f3e11]:
+          - listitem [ref=f3e12]:
+            - link "open e-ticket" [ref=f3e13] [cursor=pointer]:
+              - /url: https://secure.nic.sa/tickets/createAnon
+        - list [ref=f3e14]:
+          - listitem [ref=f3e15]:
+            - link "About" [ref=f3e16] [cursor=pointer]:
+              - /url: /en/about
+          - listitem [ref=f3e17]:
+            - link "Contact Us" [ref=f3e18] [cursor=pointer]:
+              - /url: /en/contact
+          - listitem [ref=f3e19]:
+            - link "FAQ" [ref=f3e20] [cursor=pointer]:
+              - /url: /en/help/faq
+          - listitem [ref=f3e21]:
+            - link "ar" [ref=f3e22] [cursor=pointer]:
+              - /url: /registrars
+      - generic [ref=f3e24]:
+        - generic [ref=f3e25]:
+          - link [ref=f3e26] [cursor=pointer]:
+            - /url: https://www.cst.gov.sa
+          - link [ref=f3e244] [cursor=pointer]:
+            - /url: /
+        - navigation [ref=f3e263]:
+          - list [ref=f3e264]:
+            - listitem [ref=f3e265]:
+              - link "Registrars" [ref=f3e266] [cursor=pointer]:
+                - /url: /en/registrars
+            - listitem [ref=f3e267]:
+              - link "Service Guides" [ref=f3e268] [cursor=pointer]:
+                - /url: /en/help
+            - listitem [ref=f3e269]:
+              - link "Regulations" [ref=f3e270] [cursor=pointer]:
+                - /url: /en/help/regulations-and-rules
+    - main [ref=f3e271]:
+      - generic [ref=f3e272]:
+        - generic [ref=f3e274]:
+          - heading "Registrars" [level=1] [ref=f3e275]
+          - paragraph [ref=f3e276]: The Registry-Registrar model is one of the universal practices in the field of domain names. It allows licensied Registrars to provide domain name registration services. licensied Registrars bundle domain registration services with various other add-on services (e.g. hosting, email, and other important services) and provide them to end-users (Registrants). This allows Registrants to manage everything related to domain names via a single platform, as well as receive continuous customer support.
+        - heading "Saudi Domain Name Registrars" [level=1] [ref=f3e279]
+        - generic [ref=f3e280]:
+          - list [ref=f3e282]:
+            - listitem [ref=f3e283]:
+              - generic [ref=f3e284]:
+                - img "DNet" [ref=f3e286]
+                - generic [ref=f3e287]:
+                  - heading "DNet" [level=3] [ref=f3e288]
+                  - paragraph [ref=f3e289]: شركة رقميات نت لتقنية المعلومات
+              - generic [ref=f3e290]:
+                - generic [ref=f3e291]:
+                  - paragraph [ref=f3e292]: Customer Support
+                  - paragraph [ref=f3e293]:
+                    - generic [ref=f3e296]: "920033202"
+                  - paragraph [ref=f3e297]:
+                    - link "Customer Support Link" [ref=f3e300] [cursor=pointer]:
+                      - /url: https://support.dnet.sa/
+                  - paragraph [ref=f3e301]:
+                    - img "DNet email" [ref=f3e304]
+                - link "Domain Registration Services" [ref=f3e306] [cursor=pointer]:
+                  - /url: https://dnet.sa/domains
+            - listitem [ref=f3e307]:
+              - generic [ref=f3e308]:
+                - img "Sahara Net | صحارى نت" [ref=f3e310]
+                - generic [ref=f3e311]:
+                  - heading "Sahara Net | صحارى نت" [level=3] [ref=f3e312]
+                  - paragraph [ref=f3e313]: شركة شبكة صحارى المحدودة
+              - generic [ref=f3e314]:
+                - generic [ref=f3e315]:
+                  - paragraph [ref=f3e316]: Customer Support
+                  - paragraph [ref=f3e317]:
+                    - generic [ref=f3e320]: "+966115115763"
+                  - paragraph [ref=f3e321]:
+                    - link "Customer Support Link" [ref=f3e324] [cursor=pointer]:
+                      - /url: https://sahara.sa/ar/contact
+                  - paragraph [ref=f3e325]:
+                    - img "Sahara Net | صحارى نت email" [ref=f3e328]
+                - link "Domain Registration Services" [ref=f3e330] [cursor=pointer]:
+                  - /url: https://sahara.sa/registersa
+            - listitem [ref=f3e331]:
+              - generic [ref=f3e332]:
+                - img "Hawsabah | حوسبة" [ref=f3e334]
+                - generic [ref=f3e335]:
+                  - heading "Hawsabah | حوسبة" [level=3] [ref=f3e336]
+                  - paragraph [ref=f3e337]: شركة حوسبة التقنية لتقنية المعلومات
+              - generic [ref=f3e338]:
+                - generic [ref=f3e339]:
+                  - paragraph [ref=f3e340]: Customer Support
+                  - paragraph [ref=f3e341]:
+                    - generic [ref=f3e344]: "920004276"
+                  - paragraph [ref=f3e345]:
+                    - link "Customer Support Link" [ref=f3e348] [cursor=pointer]:
+                      - /url: https://sahabah.com.sa/contact-us?lang=ar
+                  - paragraph [ref=f3e349]:
+                    - img "Hawsabah | حوسبة email" [ref=f3e352]
+                - link "Domain Registration Services" [ref=f3e354] [cursor=pointer]:
+                  - /url: https://sahabah.com.sa/services/domain?lang=ar
+            - listitem [ref=f3e355]:
+              - generic [ref=f3e356]:
+                - img "T2" [ref=f3e358]
+                - generic [ref=f3e359]:
+                  - heading "T2" [level=3] [ref=f3e360]
+                  - paragraph [ref=f3e361]: شركة أبحاث وتطوير الأعمال التجارية
+              - generic [ref=f3e362]:
+                - generic [ref=f3e363]:
+                  - paragraph [ref=f3e364]: Customer Support
+                  - paragraph [ref=f3e365]:
+                    - generic [ref=f3e368]: "920033339"
+                  - paragraph [ref=f3e369]:
+                    - link "Customer Support Link" [ref=f3e372] [cursor=pointer]:
+                      - /url: https://souqt2.sa/ContactUs
+                  - paragraph [ref=f3e373]:
+                    - img "T2 email" [ref=f3e376]
+                - link "Domain Registration Services" [ref=f3e378] [cursor=pointer]:
+                  - /url: https://souqt2.sa/Home?utm_source=CST&utm_medium=referral
+            - listitem [ref=f3e379]:
+              - generic [ref=f3e380]:
+                - img "NourNet" [ref=f3e382]
+                - generic [ref=f3e383]:
+                  - heading "NourNet" [level=3] [ref=f3e384]
+                  - paragraph [ref=f3e385]: نور انترنت فرع شركة نور للاتصالات
+              - generic [ref=f3e386]:
+                - generic [ref=f3e387]:
+                  - paragraph [ref=f3e388]: Customer Support
+                  - paragraph [ref=f3e389]:
+                    - generic [ref=f3e392]: "920000987"
+                  - paragraph [ref=f3e393]:
+                    - link "Customer Support Link" [ref=f3e396] [cursor=pointer]:
+                      - /url: https://nour.net.sa/contact-us/
+                  - paragraph [ref=f3e397]:
+                    - img "NourNet email" [ref=f3e400]
+                - link "Domain Registration Services" [ref=f3e402] [cursor=pointer]:
+                  - /url: https://nour.net.sa/
+            - listitem [ref=f3e403]:
+              - generic [ref=f3e404]:
+                - img "Solutions" [ref=f3e406]
+                - generic [ref=f3e407]:
+                  - heading "Solutions" [level=3] [ref=f3e408]
+                  - paragraph [ref=f3e409]: الشركه العربيه لخدمات الانترنت والاتصالات
+              - generic [ref=f3e410]:
+                - generic [ref=f3e411]:
+                  - paragraph [ref=f3e412]: Customer Support
+                  - paragraph [ref=f3e413]:
+                    - generic [ref=f3e416]: "8001241300"
+                  - paragraph [ref=f3e417]:
+                    - link "Customer Support Link" [ref=f3e420] [cursor=pointer]:
+                      - /url: https://azer.solutions.com.sa/
+                  - paragraph [ref=f3e421]:
+                    - img "Solutions email" [ref=f3e424]
+                - link "Domain Registration Services" [ref=f3e426] [cursor=pointer]:
+                  - /url: https://domains.solutions.com.sa/
+          - heading "Registrars Government Domains" [level=1] [ref=f3e428]
+          - list [ref=f3e430]:
+            - listitem [ref=f3e431]:
+              - generic [ref=f3e432]:
+                - img "DGA" [ref=f3e434]
+                - generic [ref=f3e435]:
+                  - heading "DGA" [level=3] [ref=f3e436]
+                  - paragraph [ref=f3e437]: للتسجيل للجهات الحكومية من خلال هيئة الحكومة الرقمية
+              - generic [ref=f3e438]:
+                - generic [ref=f3e439]:
+                  - paragraph [ref=f3e440]: Customer Support
+                  - paragraph [ref=f3e441]:
+                    - generic [ref=f3e444]: "199099"
+                  - paragraph [ref=f3e445]:
+                    - link "Customer Support Link" [ref=f3e448] [cursor=pointer]:
+                      - /url: https://dga.gov.sa/ar/contact
+                  - paragraph [ref=f3e449]:
+                    - img "DGA email" [ref=f3e452]
+                - link "Domain Registration Services" [ref=f3e454] [cursor=pointer]:
+                  - /url: https://raqmi.dga.gov.sa/platforms/domains
+    - contentinfo [ref=f3e455]:
+      - generic [ref=f3e457]:
+        - heading "Communications, Space & Technology Commission (CST)" [level=4] [ref=f3e458]
+        - list [ref=f3e460]:
+          - listitem [ref=f3e461]:
+            - link "About CST" [ref=f3e462] [cursor=pointer]:
+              - /url: https://www.cst.gov.sa/ar/about/who-we-are
+          - listitem [ref=f3e463]:
+            - link "CST Services" [ref=f3e464] [cursor=pointer]:
+              - /url: https://www.cst.gov.sa/ar/services
+          - listitem [ref=f3e465]:
+            - link "Media Center" [ref=f3e466] [cursor=pointer]:
+              - /url: https://www.cst.gov.sa/ar/media-center
+          - listitem [ref=f3e467]:
+            - link "Privacy Policy" [ref=f3e468] [cursor=pointer]:
+              - /url: https://www.cst.gov.sa/ar/about/privacy-policy
+      - generic [ref=f3e469]:
+        - link [ref=f3e472] [cursor=pointer]:
+          - /url: https://www.cst.gov.sa
+        - list [ref=f3e479]:
+          - listitem [ref=f3e480]:
+            - link [ref=f3e481] [cursor=pointer]:
+              - /url: https://x.com/cst_ksa
+          - listitem [ref=f3e484]:
+            - link [ref=f3e485] [cursor=pointer]:
+              - /url: https://facebook.com/CST.KSA
+          - listitem [ref=f3e488]:
+            - link [ref=f3e489] [cursor=pointer]:
+              - /url: https://youtube.com/@CST_KSA
+          - listitem [ref=f3e492]:
+            - link [ref=f3e493] [cursor=pointer]:
+              - /url: https://instagram.com/cst_ksa
+          - listitem [ref=f3e497]:
+            - link [ref=f3e498] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/cst_ksa
+      - paragraph [ref=f3e501]: © All rights reserved 2026 Saudi Network Information Center - CST

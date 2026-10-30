@@ -1,0 +1,9 @@
+node_modules
+dist
+pdf_preview
+tools
+.playwright-mcp
+*.pptx
+*.pdf
+qr_*.png
+deploy_log.txt
