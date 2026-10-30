@@ -1,5 +1,0 @@
-- generic [active] [ref=f2e1]:
-  - generic [ref=f2e2]:
-    - img "original" [ref=f2e3]
-    - paragraph [ref=f2e4]: ORIGINAL
-  - paragraph [ref=f2e10]: DRAFT v1

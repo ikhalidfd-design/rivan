@@ -4,3 +4,4 @@ dist/
 .profile/
 .profile*/
 .qa_prof/
+.playwright-mcp/
