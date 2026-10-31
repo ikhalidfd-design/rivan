@@ -75,7 +75,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
         ))}
       </nav>
 
-      <main className="px-4 py-6 md:pe-60">{children}</main>
+      <main className="px-4 py-6 md:ps-60">{children}</main>
     </div>
   );
 }

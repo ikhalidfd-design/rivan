@@ -9,8 +9,16 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
+function decodeSlug(raw: string): string {
+  try {
+    return decodeURIComponent(raw);
+  } catch {
+    return raw;
+  }
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const slug = decodeSlug((await params).slug);
   const supabase = await createClient();
   const { data: unit } = await supabase
     .from("public_units")
@@ -25,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function PublicBookingPage({ params }: Props) {
-  const { slug } = await params;
+  const slug = decodeSlug((await params).slug);
   const supabase = await createClient();
 
   const { data: unit } = await supabase
