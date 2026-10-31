@@ -107,7 +107,7 @@ create table public.units (
   property_id uuid references public.properties(id) on delete set null,
   name text not null,
   slug text unique not null,
-  ical_token text unique not null default encode(gen_random_bytes(32), 'hex'),
+  ical_token text unique not null default encode(extensions.gen_random_bytes(32), 'hex'),
   is_published boolean not null default false,
   capacity int not null default 2 check (capacity between 1 and 30),
   bedrooms int,
@@ -296,7 +296,7 @@ create table public.webhooks (
   id uuid primary key default gen_random_uuid(),
   org_id uuid not null references public.organizations(id) on delete cascade,
   url text not null,
-  secret text not null default encode(gen_random_bytes(32), 'hex'),
+  secret text not null default encode(extensions.gen_random_bytes(32), 'hex'),
   events text[] not null default '{}',
   enabled boolean not null default true,
   created_at timestamptz not null default now()

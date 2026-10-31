@@ -1,6 +1,14 @@
 # تقرير التنفيذ — منصة رواق SaaS (P0)
 
-**التاريخ:** 2026-10-31 · **الحالة:** تنفيذ محلي — لم يُنشر في الإنتاج (بموافقة صريحة فقط)
+**التاريخ:** 2026-10-31 · **الحالة:** منشور في الإنتاج — https://ruwaq-platform.vercel.app
+
+## تحديث 2026-10-31 (مساء): الإطلاق في الإنتاج ✅
+
+- **Supabase سحابي:** مشروع `ruwaq-platform` (ref `covnbrloagfhpaxdajmb`، eu-central-1). طُبّق `0001_init.sql` كاملًا عبر `db push` باتصال session pooler (`aws-1-eu-central-1.pooler.supabase.com:5432` — المضيف المباشر IPv6 فقط). **بدون seed** — قاعدة الإنتاج فارغة تنتظر أول تسجيل حقيقي.
+- **Vercel:** المتغيرات الخمسة مضبوطة (production + preview): `NEXT_PUBLIC_SUPABASE_URL`/`ANON_KEY`، `SUPABASE_SERVICE_ROLE_KEY`، `CRON_SECRET`، `INTEGRATIONS_ENCRYPTION_KEY`.
+- **تحقق حي:** `/login` و`/signup` 200، `/` → 307 إلى login، `/b/none` 404، `POST /api/cron/worker` بترويسة `Bearer $CRON_SECRET` → `{"worker":"w-74aa1ce6","done":1,"failed":0,"dead":0}`، وREST السحابي يستجيب (العرض `public_units` يعيد `[]`).
+- **استقرار اختبار التزامن (سبب الجذري):** مفتاح service تالف في بيئة الاختبار كان يفشل صامتًا (PGRST301) فتتعطل كل استدعاءات admin (تنظيف الحجوزات والتحقق). بعد تصحيح المفاتيح في `platform/.env.local` (gitignored): الحزمة كاملة 15/15 × 3 جولات و10/10 جولات لملف التزامن منفردًا. الاختبار الآن يتحقق من الثابت على مستوى القاعدة (حجز نشط واحد فعليًا عبر `stay ov`) لا من استجابات HTTP فقط.
+- ملاحظات تشغيل: `npx supabase db query --linked` يعمل عبر Management API حتى مع تعذر IPv6 المباشر.
 
 ## تحديث 2026-10-31 (بعد إصلاح Docker): كل الاختبارات الحية ناجحة ✅
 
