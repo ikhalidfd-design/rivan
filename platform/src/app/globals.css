@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  /* ——— RUWAQ AL-IKAMA palette: deep teal primary, sand-gold accent ——— */
+  --color-teal: #087474;
+  --color-teal-mark: #1d7273;
+  --color-teal-deep: #073f40;
+  --color-forest: #123d38;
+  --color-gold: #c5a477;
+  --color-gold-soft: #d8be95;
+  --color-gold-deep: #a9855a;
+  --color-offwhite: #f8f7f3;
+  --color-mist: #f2f5f3;
+  --color-ink: #173b37;
+  --color-muted: #55706b;
+  --color-line: #e3e8e5;
+
+  /* حالات الحجز في التقويم والقوائم */
+  --color-st-free: #e8f0ec;
+  --color-st-pending: #f3e3c2;
+  --color-st-confirmed: #cfe3df;
+  --color-st-occupied: #087474;
+  --color-st-external: #d9d4ea;
+  --color-st-blocked: #e8e2d6;
+
+  --font-display: "Alexandria", "IBM Plex Sans Arabic", sans-serif;
+  --font-body: "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-latin: "IBM Plex Sans", "IBM Plex Sans Arabic", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-offwhite);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-teal-deep);
+}
+
+/* ——— form fields ——— */
+.field {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--color-line);
+  padding: 0.85rem 0.25rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-ink);
+  transition: border-color 0.3s ease;
+  outline: none;
+  border-radius: 0;
+}
+.field::placeholder {
+  color: var(--color-muted);
+}
+.field:focus {
+  border-color: var(--color-teal);
+}
+select.field {
+  appearance: none;
+  cursor: pointer;
+}
+
+/* ——— focus visibility (WCAG 2.2) ——— */
+:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.on-dark :focus-visible,
+:focus-visible.on-dark {
+  outline-color: var(--color-gold);
+}
+
+/* أرقام لاتينية داخل نص عربي */
+.num {
+  font-family: var(--font-latin);
+  font-feature-settings: "tnum";
+}
